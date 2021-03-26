@@ -1,11 +1,12 @@
 <html>
 <head>
-	<title>Php pertamaku</title>
+	<title>Php keduaku</title>
 </head>
 <body>
-<h1>Coba PHP, edit lagi</h1>
+<h1>Coba coba PHP</h1>
 <?php
-echo "widiiih gileee php nih";
+echo "Yok semangat yok";
+echo "Pasti bisa, oke";
 ?>
 </body>
 </html>
