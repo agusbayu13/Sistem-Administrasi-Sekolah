@@ -4,7 +4,9 @@
 	<title>Login</title>
 </head>
 <body>
-	<h3>Silahkan Login </h3>
+	<h1>Silahkan Login </h1>
+	<h3>username: admin</h3>
+	<h3>password: admin </h3>
 	<hr/>
 	<form method="post" action="">
 		<table>
