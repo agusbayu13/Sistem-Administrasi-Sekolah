@@ -1,5 +1,6 @@
 <?php
 //variabel koneksi
-$konek = mysqli_connect ("localhost", "root", "", "database-sistem"); //databasespp nanti diganti nama database nya
+
+$konek = mysqli_connect ("localhost", "root", "", "database-github"); //databasespp nanti diganti nama database nya
 
 ?>
