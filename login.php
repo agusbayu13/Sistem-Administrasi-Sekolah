@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Halaman Login | Sistem Administrasi Sekolah</title>
 </head>
 <body>
 	<center>
@@ -19,11 +19,12 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="login"/></td>
+				<td><input type="submit" value="Login"/></td>
 			</tr>
 		</table>
 	</form>
-	<p>note: username dan password diisi dengan -> admin </p>
+	<p>*note:</p>
+	<p>username dan password diisi dengan > admin </p>
 <?php
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 		//variabel untuk menyimpan kiriman dari form
