@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Halaman Login | Sistem Administrasi Sekolah</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="./assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+    <!-- Custom styles for this template -->
+    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+
+
 </head>
-<body>
-	<center>
-	<h3>Silahkan Login </h3>
-	<hr/>
-	<form method="post" action="">
-		<table>
-			<tr>
-				<td>Username</td>
-				<td><input type="text" name="username"/></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="password" name="password"/></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" value="Login"/></td>
-			</tr>
-		</table>
-	</form>
-	<p>*note:</p>
-	<p>username dan password diisi dengan > admin </p>
+<body class="text-center">
+	<div id="card"> 
+		<div id="card-content">
+		  <div id="card-title">
+		  	   	<img class="mb-4" src="" alt="" width="72" height="57">
+    		  <h2>Silahkan Login</h2>
+    		<div class="underline-title"></div>
+  	  	</div>
+	</div>
+
+<main class="form-signin">
+	<form method="post" action="" class="form">
+
+		<label for="user-email" style="padding-top:13px">&nbsp;Email</label>
+			<input id="user-email" class="form-content" type="email" name="email" autocomplete="on" required />
+		<div class="form-border"></div>
+			<br>
+		<label for="user-password" style="padding-top:22px">&nbsp;Password</label>
+			<input id="user-password" class="form-content" type="password" name="password" required />
+  				<div class="form-border"></div>
+
+		<a href="#"><legend id="forgot-pass">Forgot password?</legend></a>
+		<input id="submit-btn" type="submit" name="submit" value="LOGIN" /><a href="#" id="signup">*note: username dan password diisi dengan > admin </a>
+
+</form>
+</main>
+</div>
 <?php
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 		//variabel untuk menyimpan kiriman dari form
@@ -52,6 +67,5 @@
 
 	}
 	?>
-	</center>
 </body>
 </html>
