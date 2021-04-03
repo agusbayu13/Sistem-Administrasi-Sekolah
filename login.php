@@ -29,21 +29,18 @@
 		<label for="user-email" style="padding-top:13px">&nbsp;Email</label>
 			<input id="user-email" class="form-content" type="email" name="email" autocomplete="on" required />
 		<div class="form-border"></div>
-		.form-border {
-    		background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
-    			height: 1px;
-    			width: 100%;
-		}
 			<br>
 		<label for="user-password" style="padding-top:22px">&nbsp;Password</label>
 			<input id="user-password" class="form-content" type="password" name="password" required />
   				<div class="form-border"></div>
+				<a href="#">
 
 		<a href="#"><legend id="forgot-pass">Forgot password?</legend></a>
 		<input id="submit-btn" type="submit" name="submit" value="LOGIN" /><a href="#" id="signup">*note: username dan password diisi dengan > admin </a>
 
 </form>
 </main>
+</div>
 </div>
 <?php
 	if($_SERVER['REQUEST_METHOD']=='POST'){
