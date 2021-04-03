@@ -18,7 +18,7 @@
 		<div id="card-content">
 		  <div id="card-title">
 		  	   	<img class="mb-4" src="" alt="" width="72" height="57">
-    		  <h2>Silahkan Login</h2>
+    		  <h3>Silahkan Login</h3>
     		<div class="underline-title"></div>
   	  	</div>
 	</div>
