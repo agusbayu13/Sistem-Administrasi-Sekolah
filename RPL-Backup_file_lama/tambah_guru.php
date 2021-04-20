@@ -9,7 +9,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="simpan" /></td>
+            <td><input type="submit" value="simpan" ></td>
         </tr>
     </table>
 </form>
