@@ -19,6 +19,7 @@ include "koneksi.php";
     <a href="tampil_guru.php">Data Guru</a> |
     <a href="tampil_siswa.php">Data Siswa</a> |
     <a href="transaksi.php">Data Transaksi</a> |
+    <a href="presensi.php">Data Presensi</a> |
     <a href="laporan.php">Data Laporan</a> |
     <a href="logout.php">Data Logout</a> |
 <hr/>
