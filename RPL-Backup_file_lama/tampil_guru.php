@@ -10,7 +10,7 @@
     </tr>
     <?php 
     $sql=mysqli_query($konek, "SELECT * FROM guru ORDER BY idguru ASC");
-    $no=a;
+    $no=1;
     while($d=mysqli_fetch_array($sql)) {
         echo "<tr>
             <td>$no</td>
@@ -23,6 +23,6 @@
         $no++;
     }
     ?>
-
+</table>
 
 <?php include "footer.php"; ?>
