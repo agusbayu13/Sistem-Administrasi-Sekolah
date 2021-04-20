@@ -11,7 +11,5 @@ if(isset($_SESSION['login'])){
             <a href='tampil_data.php'><<< Kembali</a>";
     }
 }else{
-    echo "Anda Tidak Memiliki Akses Ke Halaman Ini!!"
+    echo "Anda Tidak Memiliki Akses Ke Halaman Ini!!";
 }
-
-?>
