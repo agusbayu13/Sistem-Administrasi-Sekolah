@@ -36,3 +36,15 @@ Route::get('/register', function () {
 Route::get('/forgot-password', function () {
     return view('forgot-password');
 });
+
+Route::get('/tagihan', function () {
+    return view('tagihan');
+});
+
+Route::get('/presensi', function () {
+    return view('presensi');
+});
+
+Route::get('/data_guru', function () {
+    return view('data_guru');
+});
