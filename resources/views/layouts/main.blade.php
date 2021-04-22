@@ -13,7 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('frontend') }}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="{{ asset('frontend') }}/css/sb-admin-2.css">
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('frontend') }}/css/sb-admin-2.min.css" rel="stylesheet">
@@ -58,13 +58,13 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Absensi</span>
+                    <span>Guru dan Karyawan</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="buttons.html">Guru</a>
-                        <a class="collapse-item" href="cards.html">Karyawan</a>
+                        <a class="collapse-item" href="buttons.html">Data Guru</a>
+                        <a class="collapse-item" href="cards.html">Presensi</a>
                     </div>
                 </div>
             </li>
@@ -78,7 +78,7 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="/pembayaran">Pembayaran</a>
+                        <a class="collapse-item" href="/transaksi">Transaksi</a>
                         <a class="collapse-item" href="utilities-border.html">Tagihan</a>
 
                     </div>
@@ -102,8 +102,8 @@
                 <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="login">Login</a>
+                        <a class="collapse-item" href="register">Register</a>
                         <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
