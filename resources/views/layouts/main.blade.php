@@ -63,7 +63,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="buttons.html">Data Guru</a>
+                        <a class="collapse-item" href="data_guru">Data Guru</a>
                         <a class="collapse-item" href="cards.html">Presensi</a>
                     </div>
                 </div>
