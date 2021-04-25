@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Pembayaran | Sistem Administrasi Sekolah')
+@section('title', 'Sistem Administrasi Sekolah')
 
 
 @section('container')
@@ -8,7 +8,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Selamat Datang Agus Bayu Pamungkas, di halaman Transaksi</h1>
+    <h1 class="h3 mb-4 text-gray-800">Selamat Datang <strong>{{ Auth::user()->name }}</strong></h1>
 
 </div>
 <!-- /.container-fluid -->
