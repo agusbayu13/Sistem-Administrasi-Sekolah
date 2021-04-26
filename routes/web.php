@@ -22,21 +22,12 @@ Route::get('register', [AuthController::class, 'showFormregister'])->name('regis
 Route::post('register', [AuthController::class, 'register']);
 
 Route::group(['middleware' => 'auth'], function () {
-<<<<<<< HEAD
+
     
     Route::get('home', [HomeController::class, 'index'])->name('home');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-
-=======
-
-    Route::get('home', [HomeController::class, 'index'])->name('home');
-    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-});
-
-
->>>>>>> 138e4429882530fccaa9ee80e2657a969b975db7
 Route::get('/transaksi', function () {
     return view('transaksi');
 });
