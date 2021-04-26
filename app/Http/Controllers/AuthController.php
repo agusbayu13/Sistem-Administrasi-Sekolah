@@ -51,7 +51,7 @@ class AuthController extends Controller
 
         if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
-            return redirect()->route('home');
+            return redirect()->route('home')->with('success', 'Hallo!! Selamat Datang di<br/>Sistem Administrasi Sekolah Kelompok 3');
         } else { // false
 
             //Login Fail
@@ -99,7 +99,7 @@ class AuthController extends Controller
 
         if ($simpan) {
             Session::flash('success', 'Register berhasil! Silahkan login untuk mengakses data');
-            return redirect()->route('login');
+            return redirect()->route('login')->with('success', 'Selamat! Pendaftaran Berhasil!!');;
         } else {
             Session::flash('errors', ['' => 'Register gagal! Silahkan ulangi beberapa saat lagi']);
             return redirect()->route('register');
@@ -109,6 +109,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout(); // menghapus session yang aktif
-        return redirect()->route('login');
+        return redirect()->route('login')->with('success', 'Logout Berhasil! Sampai Jumpa Lain Waktu!!');
     }
 }
