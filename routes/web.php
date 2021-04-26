@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,28 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+
+Route::get('/', [AuthController::class, 'showFormlogin'])->name('login');
+Route::get('login', [AuthController::class, 'showFormlogin'])->name('login');
+Route::post('login', [AuthController::class, 'login']);
+Route::get('register', [AuthController::class, 'showFormregister'])->name('register');
+Route::post('register', [AuthController::class, 'register']);
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('home', [HomeController::class, 'index'])->name('home');
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });
+
 
 Route::get('/transaksi', function () {
     return view('transaksi');
 });
 
 Route::get('/about', function () {
-    return view('About');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::get('/forgot-password', function () {
-    return view('forgot-password');
+    return view('about');
 });
 
 Route::get('/tagihan', function () {

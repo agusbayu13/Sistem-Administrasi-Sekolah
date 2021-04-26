@@ -101,7 +101,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('frontend') }}/js/sb-admin-2.min.js"></script>
-
+    <!-- Notif SweetAlert-->
+    @include('sweetalert::alert')
 </body>
 
 </html>

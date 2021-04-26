@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Sistem Administrasi Sekolah')
+@section('title', 'Dashboard | Sistem Administrasi Sekolah')
 
 
 @section('container')
@@ -12,4 +12,5 @@
 
 </div>
 <!-- /.container-fluid -->
+@include('sweetalert::alert')
 @endsection
