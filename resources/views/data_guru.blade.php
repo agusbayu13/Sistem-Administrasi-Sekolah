@@ -2,8 +2,8 @@
 
 @section('title', 'Dashboard | Sistem Administrasi Sekolah')
 
-
 @section('container')
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -229,9 +229,11 @@
                 </div>
                 <!-- /.container-fluid -->
 
-            </div>
+
             <!-- End of Main Content -->
-            
+           
+
 <!-- /.container-fluid -->
 @include('sweetalert::alert')
+
 @endsection
