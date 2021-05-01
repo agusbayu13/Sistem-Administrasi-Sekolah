@@ -19,14 +19,15 @@ class AuthController extends Controller
             //Login Success
             return redirect()->route('home');
         }
-        return view('auth.login');
+        return view('login');
     }
 
     public function login(Request $request)
     {
         $rules = [
             'email'                 => 'required|email',
-            'password'              => 'required|string'
+            'password'              => 'required|string',
+            'g-recaptcha-response'  => 'required|captcha'
         ];
 
         $messages = [
