@@ -64,7 +64,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
 
                         <a class="collapse-item" href="data_guru">Data Guru</a>
-                        <a class="collapse-item" href="presensi">Presensi</a>
+                        <a class="collapse-item" href="presensi-masuk">Presensi</a>
                     </div>
                 </div>
             </li>

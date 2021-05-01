@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PresensiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });
 
+Route::post('/simpan-masuk', [PresensiController::class, 'store'])->name('simpan-masuk');
+Route::get('presensi-masuk', [PresensiController::class, 'index'])->name('presensi-masuk');
+Route::get('presensi-keluar', [PresensiController::class, 'keluar'])->name('presensi-keluar');
+Route::post('ubah-presensi', [PresensiController::class, 'presensipulang'])->name('ubah-presensi');
+Route::get('filter-data', [PresensiController::class, 'halamanrekap'])->name('filter-data');
+Route::get('filter-data/{tglawal}/{tglakhir}', [PresensiController::class, 'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
 Route::get('/transaksi', function () {
     return view('transaksi');
 });
