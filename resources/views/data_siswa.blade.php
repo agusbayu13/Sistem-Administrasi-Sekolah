@@ -8,7 +8,7 @@
                     <!-- Page Heading Guru-->
 <div class="container-fluid">
 
-    <h1 class="h1 mb-4 text-gray-800">DATA <strong>GURU</strong>
+    <h1 class="h1 mb-4 text-gray-800">DATA <strong>Siswa</strong>
           <i class="h6 mb-4 text-gray-800"> SMA 1 Jonggol </i> 
     </h1>
                     <!-- DataTales Example -->
@@ -16,7 +16,7 @@
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Guru</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Siswa</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -25,9 +25,9 @@
                                         <tr>
                                             <th>NO</th>
                                             <th>Nama</th>
-                                            <th>NIP</th>
+                                            <th>Kelas</th>
+                                            <th>NIS</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>Alamat</th>
                                             <th>Other</th>
                                         </tr>
                                     </thead>
@@ -35,9 +35,9 @@
                                         <tr>
                                             <th>NO</th>
                                             <th>Nama</th>
-                                            <th>NIP</th>
+                                            <th>Kelas</th>
+                                            <th>NIS</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>Alamat</th>
                                             <th>Other</th>
                                         </tr>
                                     </tfoot>
@@ -45,9 +45,9 @@
                                         <tr>
                                             <td>1</td>
                                             <td>Samuel Suliadi</td>
+                                            <td>XMIPA 1</td>
                                             <td>3322xxxxxxxxxxx</td>
                                             <td>Laki Laki</td>
-                                            <td>Salatiga</td>
 <td>                 
                                                 <div class="nav-item dropdown no-arrow"></div>
                                                     <a class="btn btn-info btn-icon-split" href="#" id="userDropdown" role="button"
@@ -73,9 +73,9 @@
                                         <tr>
                                             <td>2</td>
                                             <td>Rohmatul laeli arba'an nisa</td>
+                                            <td>XMIPA 1</td>
                                             <td>33221xxxxxxxxxx</td>
                                             <td>Perempuan</td>
-                                            <td>Rembang</td>
 <td>                 
                                                 <div class="nav-item dropdown no-arrow"></div>
                                                     <a class="btn btn-info btn-icon-split" href="#" id="userDropdown" role="button"
@@ -100,10 +100,10 @@
                                             </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td>Alpina xxx</td>
+                                            <td>Alpina Nur</td>
+                                            <td>XMIPA 1</td>
                                             <td>33221xxxxxxxxxx</td>
                                             <td>Perempuan</td>
-                                            <td>Jonggol</td>
 <td>                 
                                                 <div class="nav-item dropdown no-arrow"></div>
                                                     <a class="btn btn-info btn-icon-split" href="#" id="userDropdown" role="button"

@@ -7,18 +7,33 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Selamat Datang di Sistem Administrasi Sekolah</h1>
-    <p>Website ini dibuat oleh kelompok 3 yang beranggotakan, antara lain:</p>
-    <ol>
+    <h1 class="h1 mb-4 text-gray-800">ABOUT <strong>ACHYS</strong> 
+    </h1>
+
+ <!-- Card Content - Collapse -->
+
+                            <!-- Collapsable Card Example -->
+<div class="card shadow mb-4">
+                    <!-- Card Header - Accordion -->
+     <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
+            role="button" aria-expanded="true" aria-controls="collapseCardExample">
+            <h6 class="m-0 font-weight-bold text-primary">Administration School System (ACHYS)</h6>
+                                </a>
+            <div class="collapse show" id="collapseCardExample">
+                    <div class="card-body">Website ini dibuat oleh kelompok 3 yang beranggotakan, antara lain:
+                            <ol>
         <li>Agus Bayu Pamungkas</li>
         <li>Alfina Nur Kholifah</li>
         <li>Ariqah Salma</li>
         <li>Chairun Nisak</li>
         <li>Rohmatul Laeli</li>
         <li>Samuel Suliadi</li>
-    </ol>
-    <p>Terima Kasih Atas Kunjungannya.</p>
+                        </ol>
+
+                                    </div>
+                                </div>
+                            </div>
+                <!-- /.container-fluid -->
 
 </div>
 <!-- /.container-fluid -->

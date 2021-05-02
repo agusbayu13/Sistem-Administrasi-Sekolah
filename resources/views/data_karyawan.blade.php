@@ -8,7 +8,7 @@
                     <!-- Page Heading Guru-->
 <div class="container-fluid">
 
-    <h1 class="h1 mb-4 text-gray-800">DATA <strong>GURU</strong>
+    <h1 class="h1 mb-4 text-gray-800">DATA <strong>Karyawan</strong>
           <i class="h6 mb-4 text-gray-800"> SMA 1 Jonggol </i> 
     </h1>
                     <!-- DataTales Example -->
@@ -16,7 +16,7 @@
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Guru</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Karyawan</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -100,7 +100,7 @@
                                             </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td>Alpina xxx</td>
+                                            <td>Alpina Nur</td>
                                             <td>33221xxxxxxxxxx</td>
                                             <td>Perempuan</td>
                                             <td>Jonggol</td>

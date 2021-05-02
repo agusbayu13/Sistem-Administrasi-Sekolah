@@ -52,3 +52,19 @@ Route::get('/presensi', function () {
 Route::get('/data_guru', function () {
     return view('data_guru');
 });
+
+Route::get('/guru_karyawan', function () {
+    return view('guru_karyawan');
+});
+
+Route::get('/transaksi', function () {
+    return view('transaksi');
+});
+
+Route::get('/data_karyawan', function () {
+    return view('data_karyawan');
+});
+
+Route::get('/data_siswa', function () {
+    return view('data_siswa');
+});

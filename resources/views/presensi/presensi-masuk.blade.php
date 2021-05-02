@@ -33,16 +33,15 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <center>
-            <h1 class="h3 mb-4 text-gray-800"><strong>Halaman Presensi Masuk<br />Guru dan Karyawan</strong></h1>
-        </center>
-    </div>
-
+    <h1 class="h1 mb-4 text-gray-800">PRESENSI <strong>MASUK</strong> 
+        <i class="h6 mb-4 text-gray-800"> Hanya Untuk guru dan Karyawan </i>
+    </h1>
+</div>
     <!-- /.container-fluid -->
     <div class="content">
         <div class="row justify-content-center">
             <div class="card card-info card-outline">
-                <div class="card-header">Presensi Masuk</div>
+                <div class="card-header">Selamat datang pada halaman presensi, silahkan klik <strong>HADIR</strong> untuk melakukan presensi masuk.</div>
                 <div class="card-body">
                     <form action="{{ route('simpan-masuk') }}" method="post">
                         {{ csrf_field() }}
@@ -58,7 +57,7 @@
                         </div>
                         <center>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Klik Untuk Presensi Masuk</button>
+                                <button type="submit" class="btn btn-primary">HADIR</button>
                             </div>
                         </center>
                     </form>
@@ -67,6 +66,7 @@
             </div>
         </div>
     </div>
+
 
     @include('sweetalert::alert')
     @endsection
