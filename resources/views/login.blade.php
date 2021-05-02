@@ -73,14 +73,6 @@
                                                 <label for=""><strong>Password</strong></label>
                                                 <input type="password" name="password" class="form-control" placeholder="Password">
                                             </div>
-                                            <div class="form-group">
-                                             {!! NoCaptcha::renderJs() !!}
-                                            {!! NoCaptcha::display() !!}
-                                             @error('g-recaptcha-response')
-                                          <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                         @enderror
-                                          </div>
-                                        </div>
                                         <div class="card-footer">
                                             <button type="submit" class="btn btn-primary btn-block">Log In</button>
                                             <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Register</a> sekarang!</p>

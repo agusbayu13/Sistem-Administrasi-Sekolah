@@ -27,7 +27,7 @@ class AuthController extends Controller
         $rules = [
             'email'                 => 'required|email',
             'password'              => 'required|string',
-            'g-recaptcha-response'  => 'required|captcha'
+           
         ];
 
         $messages = [
