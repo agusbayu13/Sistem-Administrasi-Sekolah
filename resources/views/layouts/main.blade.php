@@ -33,10 +33,6 @@
                 <div  class="sidebar-brand-text ">
                     ACHYS v.3<br><sup>New High School</sup>
                 </div>
-
-                <div  class="sidebar-brand-icon mx-1">
-                    <img src="{{ asset('assets/img/logo.png')}}" alt="" class="img-fluid rounded-circle" width="50px">
-                </div>
             </a>
 
             <!-- Divider -->
