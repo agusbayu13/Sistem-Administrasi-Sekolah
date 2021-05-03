@@ -72,9 +72,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="data_guru">Guru</a>
-                        <a class="collapse-item" href="data_karyawan">Karyawan</a>
-                        <a class="collapse-item" href="data_siswa">Siswa</a>
+                        <a class="collapse-item" href="{{ route('data-guru') }}">Guru</a>
+                        <a class="collapse-item" href="{{ route('data-karyawan') }}">Karyawan</a>
+                        <a class="collapse-item" href="data-siswa">Siswa</a>
                     </div>
                 </div>
             </li>
