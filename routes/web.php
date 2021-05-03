@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\GuruController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,14 @@ Route::get('presensi-keluar', [PresensiController::class, 'keluar'])->name('pres
 Route::post('ubah-presensi', [PresensiController::class, 'presensipulang'])->name('ubah-presensi');
 Route::get('filter-data', [PresensiController::class, 'halamanrekap'])->name('filter-data');
 Route::get('filter-data/{tglawal}/{tglakhir}', [PresensiController::class, 'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
+Route::get('/data-guru', 'App\Http\Controllers\GuruController@index')->name('data-guru');
+Route::get('/input-guru', 'App\Http\Controllers\GuruController@create')->name('input-guru');
+Route::post('/simpan-guru', 'App\Http\Controllers\GuruController@store')->name('simpan-guru');
+//Route::get('/edit-guru'(1), 'App\Http\Controllers\GuruController@edit')->name('edit-guru');
+Route::get('/data-karyawan', 'App\Http\Controllers\karyawanController@index')->name('data-karyawan');
+Route::get('/input-karyawan', 'App\Http\Controllers\karyawanController@create')->name('input-karyawan');
+Route::post('/simpan-karyawan', 'App\Http\Controllers\karyawanController@store')->name('simpan-karyawan');
+
 Route::get('/transaksi', function () {
     return view('transaksi');
 });
@@ -49,22 +58,10 @@ Route::get('/presensi', function () {
     return view('presensi');
 });
 
-Route::get('/data_guru', function () {
-    return view('data_guru');
-});
-
-Route::get('/guru_karyawan', function () {
-    return view('guru_karyawan');
-});
-
 Route::get('/transaksi', function () {
     return view('transaksi');
 });
 
-Route::get('/data_karyawan', function () {
-    return view('data_karyawan');
-});
-
-Route::get('/data_siswa', function () {
-    return view('data_siswa');
+Route::get('/data-siswa', function () {
+    return view('siswa.data-siswa');
 });
