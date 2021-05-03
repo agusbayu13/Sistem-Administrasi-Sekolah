@@ -30,10 +30,12 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div  class="sidebar-brand-text ">
+                    ACHYS v.3<br><sup>New High School</sup>
                 </div>
-                <div class="sidebar-brand-text mx-3">ACHYS v.3<br><sup>SMAN 1 Jonggol</sup>
+
+                <div  class="sidebar-brand-icon mx-1">
+                    <img src="{{ asset('assets/img/logo.png')}}" alt="" class="img-fluid rounded-circle" width="50px">
                 </div>
             </a>
 

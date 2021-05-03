@@ -48,26 +48,24 @@
                                             <td>3322xxxxxxxxxxx</td>
                                             <td>Laki Laki</td>
                                             <td>Salatiga</td>
-<td>                 
-                                                <div class="nav-item dropdown no-arrow"></div>
+                                            <td>                 
+                                                <div class="nav-item dropdown no-arrow">
                                                     <a class="btn btn-info btn-icon-split" href="#" id="userDropdown" role="button"
                                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <span class="icon text-white-50">
-                                                    <i class="fas fa-arrow-right"></i>
-                                                    </span>
-                                                    <span class="text">More</span>
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-arrow-right"></i>
+                                                        </span>
+                                                            <span class="text">More</span>
+                                                    </a>
                                                      <!-- Menu Other -->
-                                                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                                        aria-labelledby="userDropdown">
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Edit</a>
+                                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"aria-labelledby="userDropdown">
+                                                        <a class="dropdown-item" href="#">
+                                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Edit</a>
 
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
-                                                   </div>
-                                                </a>
-                                        <!-- END of Menu Other -->
-
+                                                        <a class="dropdown-item" href="#">
+                                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -76,54 +74,50 @@
                                             <td>33221xxxxxxxxxx</td>
                                             <td>Perempuan</td>
                                             <td>Rembang</td>
-<td>                 
-                                                <div class="nav-item dropdown no-arrow"></div>
+                                            <td>                 
+                                                <div class="nav-item dropdown no-arrow">
                                                     <a class="btn btn-info btn-icon-split" href="#" id="userDropdown" role="button"
                                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <span class="icon text-white-50">
-                                                    <i class="fas fa-arrow-right"></i>
-                                                    </span>
-                                                    <span class="text">More</span>
-                                                     <!-- Menu Other -->
-                                                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                                        aria-labelledby="userDropdown">
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Edit</a>
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-arrow-right"></i>
+                                                        </span>
+                                                            <span class="text">More</span>
+                                                    </a>
+                                                     <!-- Isi Menu Other -->
+                                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"aria-labelledby="userDropdown">
+                                                        <a class="dropdown-item" href="#">
+                                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Edit</a>
 
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
-                                                   </div>
-                                                </a>
-                                        <!-- END of Menu Other -->
-
+                                                        <a class="dropdown-item" href="#">
+                                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
+                                                    </div>
+                                                </div>
                                             </td>           
-                                            </tr>
+                                        </tr>
                                         <tr>
                                             <td>3</td>
                                             <td>Alpina xxx</td>
                                             <td>33221xxxxxxxxxx</td>
                                             <td>Perempuan</td>
                                             <td>Jonggol</td>
-<td>                 
-                                                <div class="nav-item dropdown no-arrow"></div>
+                                            <td>                 
+                                                <div class="nav-item dropdown no-arrow">
                                                     <a class="btn btn-info btn-icon-split" href="#" id="userDropdown" role="button"
                                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <span class="icon text-white-50">
-                                                    <i class="fas fa-arrow-right"></i>
-                                                    </span>
-                                                    <span class="text">More</span>
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-arrow-right"></i>
+                                                        </span>
+                                                            <span class="text">More</span>
+                                                    </a>
                                                      <!-- Menu Other -->
-                                                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                                        aria-labelledby="userDropdown">
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Edit</a>
+                                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"aria-labelledby="userDropdown">
+                                                        <a class="dropdown-item" href="#">
+                                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Edit</a>
 
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
-                                                   </div>
-                                                </a>
-                                        <!-- END of Menu Other -->
-
+                                                        <a class="dropdown-item" href="#">
+                                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
