@@ -30,7 +30,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                <div  class="sidebar-brand-text ">
+                <div class="sidebar-brand-text ">
                     ACHYS v.3<br><sup>New High School</sup>
                 </div>
             </a>
@@ -55,10 +55,17 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="presensi-masuk">
-                    <i class="fas fa-fw fa-sm"></i>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-folder"></i>
                     <span>Presensi</span>
                 </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('presensi-masuk') }}">Presensi Masuk</a>
+                        <a class="collapse-item" href="{{ route('presensi-keluar') }}">Presensi Keluar</a>
+                        <a class="collapse-item" href="filter-data">Rekap Data Presensi</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item">
@@ -96,10 +103,10 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Lainnya
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Nav Item - Pages Collapse Menu 
             <li class="nav-item active">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -118,7 +125,7 @@
                     </div>
                 </div>
             </li>
-
+        -->
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="/about">

@@ -67,8 +67,8 @@ class GuruController extends Controller
      */
     public function edit($id)
     {
-        //$gur = Guru::findorfail($id);
-        //return view('guru.edit-guru', compact('gur'));
+        $gur = Guru::findorfail($id);
+        return view('guru.edit-guru', compact('gur'));
     }
 
     /**
@@ -80,7 +80,11 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $gur = Guru::findorfail($id);
+        $gur->update($request->all());
+
+        alert()->success('Berhasil!', 'Data Guru Berhasil Diubah');
+        return redirect('data-guru');
     }
 
     /**
@@ -91,6 +95,10 @@ class GuruController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $gur = Guru::findorfail($id);
+        $gur->delete();
+
+        alert()->info('Data Berhasil Dihapus');
+        return back();
     }
 }

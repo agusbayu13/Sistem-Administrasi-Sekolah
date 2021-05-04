@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login | Sistem Administrasi Sekolah</title>
+    <title>Login | Sistem Administrasi Sekolah </title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('frontend') }}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,7 +39,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4"><strong> SELAMAT DATANG DI ACHYS NEW HIGH SCHOOL</strong></h1>
                                     </div>
                                     <form action="{{ route('login') }}" method="post">
                                         @csrf
@@ -75,10 +75,10 @@
                                                 <label for=""><strong>Password</strong></label>
                                                 <input type="password" name="password" class="form-control" placeholder="Password">
                                             </div>
-                                        <div class="card-footer">
-                                            <button type="submit" class="btn btn-primary btn-block">Log In</button>
-                                            <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Register</a> sekarang!</p>
-                                        </div>
+                                            <div class="card-footer">
+                                                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                                                <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Register</a> sekarang!</p>
+                                            </div>
                                     </form>
 
                                 </div>

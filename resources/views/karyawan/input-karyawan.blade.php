@@ -23,16 +23,30 @@
             <form action="{{ route('simpan-karyawan') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <textarea name="nama" id="nama" class="form-control" placeholder="Nama Karyawan"></textarea>
+                    <label>Nama Karyawan</label>
+                    <input type="text" name="nama" id="nama" class="form-control">
                 </div>
                 <div class="form-group">
-                    <textarea name="nip" id="nip" class="form-control" placeholder="NIP Karyawan"></textarea>
+                    <label>NIP Karyawan</label>
+                    <input type="text" name="nip" id="nip" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text">
+                            Jenis Kelamin
+                        </label>
+                    </div>
+                    <select class="custom-select" name="jeniskelamin">
+
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempua">Perempuan</option>
+
+                    </select>
                 </div>
                 <div class="form-group">
-                    <textarea name="jeniskelamin" id="jeniskelamin" class="form-control" placeholder="Jenis Kelamin"></textarea>
-                </div>
-                <div class="form-group">
-                    <textarea name="alamat" id="alamat" class="form-control" placeholder="Alamat"></textarea>
+                    <label>Alamat</label>
+                    <input type="text" name="alamat" id="alamat" class="form-control">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Simpan</button>

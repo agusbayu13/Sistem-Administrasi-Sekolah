@@ -37,10 +37,16 @@ Route::get('filter-data/{tglawal}/{tglakhir}', [PresensiController::class, 'tamp
 Route::get('/data-guru', 'App\Http\Controllers\GuruController@index')->name('data-guru');
 Route::get('/input-guru', 'App\Http\Controllers\GuruController@create')->name('input-guru');
 Route::post('/simpan-guru', 'App\Http\Controllers\GuruController@store')->name('simpan-guru');
-//Route::get('/edit-guru'(1), 'App\Http\Controllers\GuruController@edit')->name('edit-guru');
+Route::get('/edit-guru/{id}', 'App\Http\Controllers\GuruController@edit')->name('edit-guru');
+Route::post('/update-guru/{id}', 'App\Http\Controllers\GuruController@update')->name('update-guru');
+Route::get('/delete-guru/{id}', 'App\Http\Controllers\GuruController@destroy')->name('delete-guru');
+
 Route::get('/data-karyawan', 'App\Http\Controllers\karyawanController@index')->name('data-karyawan');
 Route::get('/input-karyawan', 'App\Http\Controllers\karyawanController@create')->name('input-karyawan');
 Route::post('/simpan-karyawan', 'App\Http\Controllers\karyawanController@store')->name('simpan-karyawan');
+Route::get('/edit-karyawan/{id}', 'App\Http\Controllers\KaryawanController@edit')->name('edit-karyawan');
+Route::post('/update-karyawan/{id}', 'App\Http\Controllers\karyawanController@update')->name('update-karyawan');
+Route::get('/delete-karyawan/{id}', 'App\Http\Controllers\KaryawanController@destroy')->name('delete-karyawan');
 
 Route::get('/transaksi', function () {
     return view('transaksi');
