@@ -30,7 +30,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>NO</th>
+                            <th>No</th>
                             <th>Nama</th>
                             <th>NIP</th>
                             <th>Jenis Kelamin</th>
@@ -41,7 +41,7 @@
                     @foreach ($dtGuru as $item)
                     <tbody>
                         <tr>
-                            <td>{{$item->id}}</td>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$item->nama}}</td>
                             <td>{{$item->nip}}</td>
                             <td>{{$item->jeniskelamin}}</td>
@@ -56,9 +56,9 @@
                                     <span class="text">More</span>
                                     <!-- Menu Other -->
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                        <a class="dropdown-item" href="{{ url('edit-guru') }}">
+                                        <a class="dropdown-item" href="{{ url('edit-guru', $item->id) }}">
                                             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Edit</a>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="{{ url('delete-guru', $item->id) }}">
                                             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
                                     </div>
                                 </a>

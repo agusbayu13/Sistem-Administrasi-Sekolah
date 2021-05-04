@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
-@section('title', 'Input Data Guru | Sistem Administrasi Sekolah')
+@section('title', 'Edit Data Karyawan | Sistem Administrasi Sekolah')
 
 @section('container')
 
 <!-- Begin Page Content -->
-<!-- Page Heading Guru-->
+<!-- Page Heading Karyawan-->
 <div class="container-fluid">
 
-    <h1 class="h1 mb-4 text-gray-800">DATA <strong>GURU</strong>
+    <h1 class="h1 mb-4 text-gray-800">DATA <strong>KARYAWAN</strong>
         <i class="h6 mb-4 text-gray-800"> SMA 1 Jonggol </i>
     </h1>
     <!-- DataTales Example -->
@@ -16,19 +16,19 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Input Data Guru Baru</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Edit Data Karyawan</h6>
         </div>
 
         <div class="card-body">
-            <form action="{{ route('simpan-guru') }}" method="POST">
+            <form action="{{ url('update-karyawan', $kar->id) }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label>Nama Guru</label>
-                    <input type="text" name="nama" id="nama" class="form-control">
+                    <label>Nama Karyawan</label>
+                    <input type="text" name="nama" id="nama" class="form-control" value="{{ $kar->nama }}">
                 </div>
                 <div class="form-group">
-                    <label>NIP Guru</label>
-                    <input type="text" name="nip" id="nip" class="form-control">
+                    <label>NIP Karyawan</label>
+                    <input type="text" name="nip" id="nip" class="form-control" value="{{ $kar->nip }}">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -38,7 +38,7 @@
                     </div>
                     <select class="custom-select" name="jeniskelamin">
 
-                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="">{{ $kar->jeniskelamin }}</option>
                         <option value="Laki-laki">Laki-laki</option>
                         <option value="Perempua">Perempuan</option>
 
@@ -46,10 +46,10 @@
                 </div>
                 <div class="form-group">
                     <label>Alamat</label>
-                    <input type="text" name="alamat" id="alamat" class="form-control">
+                    <input type="text" name="alamat" id="alamat" class="form-control" value="{{ $kar->alamat }}">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Edit Data</button>
                 </div>
             </form>
         </div>

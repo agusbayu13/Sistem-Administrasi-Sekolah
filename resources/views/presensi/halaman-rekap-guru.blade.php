@@ -8,15 +8,15 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <center>
-        <h1 class="h3 mb-4 text-gray-800"><strong>Halaman Rekap Presensi Guru dan Karyawan</strong></h1>
-    </center>
+    <h1 class="h1 mb-4 text-gray-800">REKAP DATA <strong>PRESENSI</strong>
+        <i class="h6 mb-4 text-gray-800"> Hanya Untuk guru dan Karyawan </i>
+    </h1>
 </div>
 <!-- /.container-fluid -->
 <div class="content">
     <div class="row justify-content-center">
         <div class="card card-info card-outline">
-            <div class="card-header">Lihat Data</div>
+            <div class="card-header">Selamat datang pada halaman presensi, silahkan klik <strong>LIHAT</strong> untuk melihat data presensi.</div>
             <div class="card-body">
                 <div class="form-group">
                     <label for="label">Tanggal Awal</label>

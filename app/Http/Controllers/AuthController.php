@@ -27,7 +27,7 @@ class AuthController extends Controller
         $rules = [
             'email'                 => 'required|email',
             'password'              => 'required|string',
-           
+
         ];
 
         $messages = [
@@ -40,6 +40,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
+
             return redirect()->back()->withErrors($validator)->withInput($request->all);
         }
 
@@ -52,7 +53,7 @@ class AuthController extends Controller
 
         if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
-            alert()->success('Selamat Datang!', 'di Achys Kelompok 3');
+            alert()->success('SELAMAT DATANG DI ACHYS!', 'CREATED BY KELOMPOK 3');
             return redirect()->route('home');
         } else { // false
 
@@ -100,7 +101,7 @@ class AuthController extends Controller
         $simpan = $user->save();
 
         if ($simpan) {
-            alert()->success('Register berhasil!', 'Silahkan login untuk mengakses data');
+            alert()->success('Register berhasil!', 'Silahkan login untuk mengakses ACHYS');
             return redirect()->route('login');
         } else {
             alert()->error('Register Gagal!', 'Silahkan ulangi beberapa saat lagi !!');
@@ -111,6 +112,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout(); // menghapus session yang aktif
-        return redirect()->route('login')->with('success', 'Logout Berhasil! Sampai Jumpa Lain Waktu!!');
+        alert()->info('Logout Berhasil!', 'Sampai Jumpa Lain Waktu!!');
+        return redirect()->route('login');
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Dashboard | Sistem Administrasi Sekolah')
+@section('title', 'Edit Data Guru | Sistem Administrasi Sekolah')
 
 @section('container')
 
@@ -16,26 +16,40 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Edit Data Guru</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Edit Data Guru Baru</h6>
         </div>
 
         <div class="card-body">
-            <form action="{{ url('edit-guru') }}" method="POST">
+            <form action="{{ url('update-guru', $gur->id) }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <textarea name="nama" id="nama" class="form-control" placeholder="Nama Guru"></textarea>
+                    <label>Nama Guru</label>
+                    <input type="text" name="nama" id="nama" class="form-control" value="{{ $gur->nama }}">
                 </div>
                 <div class="form-group">
-                    <textarea name="nip" id="nip" class="form-control" placeholder="NIP Guru"></textarea>
+                    <label>NIP Guru</label>
+                    <input type="text" name="nip" id="nip" class="form-control" value="{{ $gur->nip }}">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text">
+                            Jenis Kelamin
+                        </label>
+                    </div>
+                    <select class="custom-select" name="jeniskelamin">
+
+                        <option value="">{{ $gur->jeniskelamin }}</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+
+                    </select>
                 </div>
                 <div class="form-group">
-                    <textarea name="jeniskelamin" id="jeniskelamin" class="form-control" placeholder="Jenis Kelamin"></textarea>
+                    <label>Alamat</label>
+                    <input type="text" name="alamat" id="alamat" class="form-control" value="{{ $gur->alamat }}">
                 </div>
                 <div class="form-group">
-                    <textarea name="alamat" id="alamat" class="form-control" placeholder="Alamat"></textarea>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Simpan Edit</button>
+                    <button type="submit" class="btn btn-primary">Edit Data</button>
                 </div>
             </form>
         </div>

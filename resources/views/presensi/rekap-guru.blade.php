@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Rekap Guru dan Karyawan | Sistem Administrasi Sekolah')
+@section('title', 'Rekap Presensi | Sistem Administrasi Sekolah')
 
 
 @section('container')
@@ -8,15 +8,15 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <center>
-        <h1 class="h3 mb-4 text-gray-800"><strong>Halaman Rekap Presensi Guru dan Karyawan</strong></h1>
-    </center>
+    <h1 class="h1 mb-4 text-gray-800">REKAP DATA <strong>PRESENSI</strong>
+        <i class="h6 mb-4 text-gray-800"> Hanya Untuk guru dan Karyawan </i>
+    </h1>
 </div>
 <!-- /.container-fluid -->
 <div class="content">
     <div class="row justify-content-center">
         <div class="card card-info card-outline">
-            <div class="card-header">Lihat Data</div>
+            <div class="card-header">Selamat datang pada halaman rekap data presensi, silahkan klik <strong>LIHAT</strong> untuk melihat data presensi.</div>
             <div class="card-body">
                 <div class="form-group">
                     <label for="label">Tanggal Awal</label>
@@ -35,14 +35,16 @@
                 <div class="form-group">
                     <table border="1">
                         <tr>
-                            <th>pegawai</th>
-                            <th>Tanggal</th>
-                            <th>Masuk</th>
-                            <th>Keluar</th>
-                            <th>Jumlah Jam Kerja</th>
+                            <th>No</th>
+                            <th> Pegawai </th>
+                            <th> Tanggal </th>
+                            <th> Jam Masuk </th>
+                            <th> Jam Keluar </th>
+                            <th> Lama Kerja </th>
                         </tr>
                         @foreach ($presensi as $item)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->user->name }}</td>
                             <td>{{ $item->tgl }}</td>
                             <td>{{ $item->jammasuk }}</td>

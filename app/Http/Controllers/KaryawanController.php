@@ -67,7 +67,8 @@ class KaryawanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kar = Karyawan::findorfail($id);
+        return view('karyawan.edit-karyawan', compact('kar'));
     }
 
     /**
@@ -79,7 +80,11 @@ class KaryawanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $kar = Karyawan::findorfail($id);
+        $kar->update($request->all());
+
+        alert()->success('Berhasil!', 'Data Karyawan Berhasil Diubah');
+        return redirect('data-karyawan');
     }
 
     /**
@@ -90,6 +95,10 @@ class KaryawanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kar = Karyawan::findorfail($id);
+        $kar->delete();
+
+        alert()->info('Data Berhasil Dihapus');
+        return back();
     }
 }
