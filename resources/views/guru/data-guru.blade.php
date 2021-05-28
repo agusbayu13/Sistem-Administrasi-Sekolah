@@ -39,7 +39,7 @@
                         </tr>
                     </thead>
                     @foreach ($dtGuru as $item)
-                    <tbody>
+                    <tbody> 
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$item->nama}}</td>

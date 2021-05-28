@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\PembayaranController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,9 +49,9 @@ Route::get('/edit-karyawan/{id}', 'App\Http\Controllers\KaryawanController@edit'
 Route::post('/update-karyawan/{id}', 'App\Http\Controllers\karyawanController@update')->name('update-karyawan');
 Route::get('/delete-karyawan/{id}', 'App\Http\Controllers\KaryawanController@destroy')->name('delete-karyawan');
 
-Route::get('/transaksi', function () {
-    return view('transaksi');
-});
+Route::get('/data-pembayaran', 'App\Http\Controllers\PembayaranController@index')->name('data-pembayaran');
+Route::get('/input-pembayaran', 'App\Http\Controllers\PembayaranController@create')->name('input-pembayaran');
+Route::post('/simpan-pembayaran', 'App\Http\Controllers\PembayaranController@store')->name('simpan-pembayaran');
 
 Route::get('/about', function () {
     return view('About');
@@ -62,10 +63,6 @@ Route::get('/tagihan', function () {
 
 Route::get('/presensi', function () {
     return view('presensi');
-});
-
-Route::get('/transaksi', function () {
-    return view('transaksi');
 });
 
 Route::get('/data-siswa', function () {
