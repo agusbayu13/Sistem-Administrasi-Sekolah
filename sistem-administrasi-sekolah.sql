@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2021 at 07:23 AM
+-- Generation Time: May 31, 2021 at 11:33 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -36,6 +36,36 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guru`
+--
+
+CREATE TABLE `guru` (
+  `nama` varchar(100) NOT NULL,
+  `nip` int(20) NOT NULL,
+  `jeniskelamin` enum('L','P') NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `karyawan`
+--
+
+CREATE TABLE `karyawan` (
+  `nama` varchar(100) NOT NULL,
+  `nip` int(20) NOT NULL,
+  `jeniskelamin` enum('L','P') NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -73,6 +103,58 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pembayaran`
+--
+
+CREATE TABLE `pembayaran` (
+  `id_admin` int(15) NOT NULL,
+  `NIS` int(15) NOT NULL,
+  `nama` varchar(20) NOT NULL,
+  `kelas` varchar(10) NOT NULL,
+  `waktu_pembayaran` date NOT NULL,
+  `kode_pembayaran` varchar(10) NOT NULL,
+  `total_pembayaran` varchar(20) NOT NULL,
+  `jenis_pembayaran` varchar(10) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `presensi`
+--
+
+CREATE TABLE `presensi` (
+  `NIP` int(20) NOT NULL,
+  `id` int(20) NOT NULL,
+  `tgl` date NOT NULL,
+  `jam_masuk` time NOT NULL,
+  `jam_keluar` time NOT NULL,
+  `jam_kerja` datetime NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `siswa`
+--
+
+CREATE TABLE `siswa` (
+  `nis` int(20) NOT NULL,
+  `id_kelas` int(20) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jeniskelamin` enum('L','P') NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -86,13 +168,6 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Agus Bayu Pamungkas', 'abay@students.unnes.ac.id', '2021-04-24 21:54:48', '$2y$10$aJ9WFMpVo5U/jZZpLYRsZ.45gbjl7F4dyS4L3Rjpp7ctiUzVdzot6', NULL, '2021-04-24 21:54:48', '2021-04-24 21:54:48');
 
 --
 -- Indexes for dumped tables
@@ -116,6 +191,12 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `presensi`
+--
+ALTER TABLE `presensi`
+  ADD PRIMARY KEY (`NIP`,`id`) USING BTREE;
 
 --
 -- Indexes for table `users`
@@ -144,7 +225,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

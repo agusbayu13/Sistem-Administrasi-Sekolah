@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\pembayaran;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PembayaranController extends Controller
@@ -15,8 +15,7 @@ class PembayaranController extends Controller
     public function index()
     {
         $dt_pembayaran = pembayaran::all();
-        dd($dt_pembayaran);
-        return view('pembayaran.input-pembayaran', ['dt_pembayaran' => $dt_pembayaran]);
+        return view('pembayaran.input-pembayaran', compact('dt_pembayaran'));
     }
 
     /**
@@ -39,18 +38,16 @@ class PembayaranController extends Controller
     {
         //dd($request->all());
         pembayaran::create([
-            'nama'=> $request->nama, 
-            'kelas'=> $request->kelas, 
-            'nis'=> $request->nis, 
-            'jenis_pembayaran'=> $request->jenispembayaran, 
-            'kode_pembayaran'=> $request->total,
-            'tgl_pembayaran'=> $request->tanggal, 
-            'bukti_pembayaran'=> $request->bukti,
-            'total_pembayaran'=> $request->total,
+            'nama' => $request->nama,
+            'kelas' => $request->kelas,
+            'nis' => $request->nis,
+            'jenis_pembayaran' => $request->jenispembayaran,
+            'kode_pembayaran' => $request->total,
+            'tgl_pembayaran' => $request->tanggal,
+            'bukti_pembayaran' => $request->bukti,
+            'total_pembayaran' => $request->total,
         ]);
-        return redirect('pembayaran.input-pembayaran');
-
-
+        return redirect('input-pembayaran');
     }
 
     /**

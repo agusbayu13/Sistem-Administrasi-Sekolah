@@ -49,8 +49,8 @@ Route::get('/edit-karyawan/{id}', 'App\Http\Controllers\KaryawanController@edit'
 Route::post('/update-karyawan/{id}', 'App\Http\Controllers\karyawanController@update')->name('update-karyawan');
 Route::get('/delete-karyawan/{id}', 'App\Http\Controllers\KaryawanController@destroy')->name('delete-karyawan');
 
-Route::get('/data-pembayaran', 'App\Http\Controllers\PembayaranController@index')->name('data-pembayaran');
-Route::get('/input-pembayaran', 'App\Http\Controllers\PembayaranController@create')->name('input-pembayaran');
+Route::get('/input-pembayaran', 'App\Http\Controllers\PembayaranController@index', 'App\Http\Controllers\PembayaranController@create')->name('input-pembayaran');
+
 Route::post('/simpan-pembayaran', 'App\Http\Controllers\PembayaranController@store')->name('simpan-pembayaran');
 
 Route::get('/about', function () {
