@@ -20,16 +20,19 @@
 
       <div class="card">
          <div class="card-body">
-            <form method="post" action="{{ route('simpan-pembayaran') }}">
+            <form method="post" action="{{ route('simpan-pembayaran') }}" enctype="multipart/form-data"> 
                @csrf
-               <div class="form-group">
-                  <label>Nama Siswa</label>
-                  <input type="text" name="nama" id="nama" class="form-control">
-               </div>
 
                <div class="form-group">
                   <label>Kelas</label>
-                  <input type="text" name="kelas" id="kelas" class="form-control">
+               <select class="custom-select" name="kelas">
+
+                  <option value="">Pilih Kelas</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+
+               </select>
                </div>
 
                <div class="form-group">
@@ -59,7 +62,7 @@
 
                <div class="form-group">
                   <label>Tanggal Pembayaran</label>
-                  <input type="text" name="tanggal" id="tanggal" class="form-control">
+                  <input type="date" name="tanggal" id="tanggal" class="form-control">
                </div>
 
                <div class="form-group">
@@ -69,7 +72,7 @@
 
                <div class="form-group">
                   <label>Bukti Pembayaran</label>
-                  <input type="text" name="bukti" id="bukti" class="form-control">
+                  <input type="file" name="bukti" id="bukti">
                </div>
 
                <div class="form-group">
@@ -117,7 +120,9 @@
                            <td>{{$item->kode_pembayaran}}</td>
                            <td>{{$item->tgl_pembayaran}}</td>
                            <td>{{$item->total_pembayaran}}</td>
-                           <td>{{$item->bukti_pembayaran}}</td>
+                           <td>
+                              <a href="{{asset('bukti_pembayaran/'.$item -> bukti_pembayaran)}}" target="_blank" rel="noopener noreferrer"> lihat gambar</a>
+                           </td>
                         </tr>
                         @endforeach
                      </tbody>

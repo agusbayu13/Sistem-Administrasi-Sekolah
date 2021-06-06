@@ -37,16 +37,20 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-        pembayaran::create([
-            'nama' => $request->nama,
-            'kelas' => $request->kelas,
-            'nis' => $request->nis,
-            'jenis_pembayaran' => $request->jenispembayaran,
-            'kode_pembayaran' => $request->total,
-            'tgl_pembayaran' => $request->tanggal,
-            'bukti_pembayaran' => $request->bukti,
-            'total_pembayaran' => $request->total,
-        ]);
+        $gambar=$request->bukti;
+        $namafile=$gambar->getClientOriginalName();
+        $dt_upload=new pembayaran;
+            $dt_upload->nama = $request->nama;
+            $dt_upload->kelas = $request->kelas;
+            $dt_upload->nis = $request->nis;
+            $dt_upload->jenis_pembayaran = $request->jenispembayaran;
+            $dt_upload->kode_pembayaran = $request->total;
+            $dt_upload->tgl_pembayaran = $request->tanggal;
+            $dt_upload->bukti_pembayaran = $namafile;
+            $dt_upload->total_pembayaran = $request->total;
+            
+        $gambar->move(public_path().'/bukti_pembayaran', $namafile);
+        $dt_upload->save();
         return redirect('input-pembayaran');
     }
 
