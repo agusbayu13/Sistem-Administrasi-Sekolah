@@ -36,7 +36,7 @@
         </div>
 
         <div>
-          <button type="submit" class="btn btn-primary btn-block" href="">Cek Tagihan</button>
+          <button type="submit" class="btn btn-success btn-block btn-rounded float-right" href="">Cek Tagihan</button>
         </div>
       </div>
       </div>
