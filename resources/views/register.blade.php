@@ -56,6 +56,20 @@
                                         <label for=""><strong>Nama Lengkap</strong></label>
                                         <input type="text" name="name" class="form-control" placeholder="Nama Lengkap">
                                     </div>
+                                    <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                        <label class="input-group-text">
+                                            Jenis User
+                                          </label>
+                                        </div>
+                                        <select class="custom-select" name="level">
+
+                                             <option value="">Pilih Jenis User</option>
+                                             <option value="Guru">Guru</option>
+                                             <option value="Karyawan">Karyawan</option>
+                                             <option value="Siswa">Siswa</option>
+                                        </select>
+                                    </div>
                                     <div class="form-group">
                                         <label for=""><strong>Email</strong></label>
                                         <input type="text" name="email" class="form-control" placeholder="Email">
@@ -68,7 +82,6 @@
                                         <label for=""><strong>Konfirmasi Password</strong></label>
                                         <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
                                     </div>
-                                </div>
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary btn-block">Register</button>
 

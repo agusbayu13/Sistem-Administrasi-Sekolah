@@ -74,6 +74,7 @@ class AuthController extends Controller
             'name'                  => 'required|min:3|max:35',
             'email'                 => 'required|email|unique:users,email',
             'password'              => 'required|confirmed'
+
         ];
 
         $messages = [
@@ -98,6 +99,7 @@ class AuthController extends Controller
         $user->email = strtolower($request->email);
         $user->password = Hash::make($request->password);
         $user->email_verified_at = \Carbon\Carbon::now();
+        $user->level = $request->level;
         $simpan = $user->save();
 
         if ($simpan) {
