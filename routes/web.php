@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\SiswaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,12 +45,15 @@ Route::group(['middleware' => ['auth', 'ceklevel:Admin']], function () {
     Route::get('/edit-karyawan/{nip}', 'App\Http\Controllers\KaryawanController@edit')->name('edit-karyawan');
     Route::post('/update-karyawan/{nip}', 'App\Http\Controllers\karyawanController@update')->name('update-karyawan');
     Route::get('/delete-karyawan/{nip}', 'App\Http\Controllers\KaryawanController@destroy')->name('delete-karyawan');
+    Route::get('/data-siswa', 'App\Http\Controllers\SiswaController@index')->name('data-siswa');
+    Route::get('/input-siswa', 'App\Http\Controllers\SiswaController@create')->name('input-siswa');
+    Route::post('/simpan-siswa', 'App\Http\Controllers\SiswaController@store')->name('simpan-siswa');
+    Route::get('/edit-siswa/{nis}', 'App\Http\Controllers\SiswaController@edit')->name('edit-siswa');
+    Route::post('/update-siswa/{nis}', 'App\Http\Controllers\SiswaController@update')->name('update-siswa');
+    Route::get('/delete-siswa/{nis}', 'App\Http\Controllers\SiswaController@destroy')->name('delete-siswa');
     Route::get('/input-pembayaran', 'App\Http\Controllers\PembayaranController@index', 'App\Http\Controllers\PembayaranController@create')->name('input-pembayaran');
     Route::post('/simpan-pembayaran', 'App\Http\Controllers\PembayaranController@store')->name('simpan-pembayaran');
 
-    Route::get('/data-siswa', function () {
-        return view('siswa.data-siswa');
-    });
 });
 Route::group(['middleware' => ['auth', 'ceklevel:Admin,Guru,Karyawan']], function () {
     Route::post('/simpan-masuk', [PresensiController::class, 'store'])->name('simpan-masuk');
