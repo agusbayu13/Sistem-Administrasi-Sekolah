@@ -9,8 +9,13 @@ class Guru extends Model
 {
     //use HasFactory;
     protected $table = "Guru";
-    protected $primaryKey = "id";
+    protected $primaryKey = "nip";
     protected $fillable = [
-        'id', 'nama', 'nip', 'jeniskelamin', 'alamat'
+        'nama', 'nip', 'jeniskelamin', 'alamat'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

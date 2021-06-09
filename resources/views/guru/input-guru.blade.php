@@ -40,7 +40,7 @@
 
                         <option value="">Pilih Jenis Kelamin</option>
                         <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempua">Perempuan</option>
+                        <option value="Perempuan">Perempuan</option>
 
                     </select>
                 </div>

@@ -20,7 +20,7 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ url('update-guru', $gur->id) }}" method="POST">
+            <form action="{{ url('update-guru', $gur->nip) }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label>Nama Guru</label>

@@ -20,7 +20,7 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ url('update-karyawan', $kar->id) }}" method="POST">
+            <form action="{{ url('update-karyawan', $kar->nip) }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label>Nama Karyawan</label>
@@ -40,7 +40,7 @@
 
                         <option value="">{{ $kar->jeniskelamin }}</option>
                         <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempua">Perempuan</option>
+                        <option value="Perempuan">Perempuan</option>
 
                     </select>
                 </div>

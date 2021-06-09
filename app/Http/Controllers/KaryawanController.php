@@ -54,7 +54,7 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($nip)
     {
         //
     }
@@ -65,9 +65,9 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($nip)
     {
-        $kar = Karyawan::findorfail($id);
+        $kar = Karyawan::findorfail($nip);
         return view('karyawan.edit-karyawan', compact('kar'));
     }
 
@@ -78,9 +78,9 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $nip)
     {
-        $kar = Karyawan::findorfail($id);
+        $kar = Karyawan::findorfail($nip);
         $kar->update($request->all());
 
         alert()->success('Berhasil!', 'Data Karyawan Berhasil Diubah');
@@ -93,9 +93,9 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($nip)
     {
-        $kar = Karyawan::findorfail($id);
+        $kar = Karyawan::findorfail($nip);
         $kar->delete();
 
         alert()->info('Data Berhasil Dihapus');

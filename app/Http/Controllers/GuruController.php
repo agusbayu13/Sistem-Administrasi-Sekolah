@@ -65,9 +65,9 @@ class GuruController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($nip)
     {
-        $gur = Guru::findorfail($id);
+        $gur = Guru::findorfail($nip);
         return view('guru.edit-guru', compact('gur'));
     }
 
@@ -75,12 +75,12 @@ class GuruController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $nip
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $nip)
     {
-        $gur = Guru::findorfail($id);
+        $gur = Guru::findorfail($nip);
         $gur->update($request->all());
 
         alert()->success('Berhasil!', 'Data Guru Berhasil Diubah');
@@ -93,9 +93,9 @@ class GuruController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($nip)
     {
-        $gur = Guru::findorfail($id);
+        $gur = Guru::findorfail($nip);
         $gur->delete();
 
         alert()->info('Data Berhasil Dihapus');

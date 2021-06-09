@@ -56,9 +56,9 @@
                                     <span class="text">More</span>
                                     <!-- Menu Other -->
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                        <a class="dropdown-item" href="{{ url('edit-karyawan', $item->id) }}">
+                                        <a class="dropdown-item" href="{{ url('edit-karyawan', $item->nip) }}">
                                             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Edit</a>
-                                        <a class="dropdown-item" href="{{ url('delete-karyawan', $item->id) }}">
+                                        <a class="dropdown-item" href="{{ url('delete-karyawan', $item->nip) }}">
                                             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
                                     </div>
                                 </a>
