@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 06:02 PM
+-- Generation Time: Jun 09, 2021 at 12:37 PM
 -- Server version: 10.4.18-MariaDB
--- PHP Version: 7.4.16
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,7 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `guru` (
   `nama` varchar(100) DEFAULT NULL,
   `nip` int(20) NOT NULL,
-  `jeniskelamin` enum('L','P') NOT NULL,
+  `jeniskelamin` enum('Laki-laki','Perempuan') NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -61,11 +61,18 @@ CREATE TABLE `guru` (
 CREATE TABLE `karyawan` (
   `nama` varchar(100) DEFAULT NULL,
   `nip` int(20) NOT NULL,
-  `jeniskelamin` enum('L','P') NOT NULL,
+  `jeniskelamin` enum('Laki-laki','Perempuan') NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `karyawan`
+--
+
+INSERT INTO `karyawan` (`nama`, `nip`, `jeniskelamin`, `alamat`, `created_at`, `updated_at`) VALUES
+('Agus Bayu Pamungkas', 234561, 'Perempuan', 'Semarang', '2021-06-08 16:30:54', '2021-06-08 16:33:22');
 
 -- --------------------------------------------------------
 
@@ -120,6 +127,13 @@ CREATE TABLE `pembayaran` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id`, `nis`, `nama`, `kelas`, `tgl_pembayaran`, `kode_pembayaran`, `total_pembayaran`, `jenis_pembayaran`, `bukti_pembayaran`, `created_at`, `updated_at`) VALUES
+(1, 1234567, NULL, '10', '2021-06-09', '23456', '23456', 'SPP', 'asdfgh.png', '2021-06-08 10:28:14', '2021-06-08 10:28:14');
+
 -- --------------------------------------------------------
 
 --
@@ -161,7 +175,7 @@ CREATE TABLE `siswa` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `level` enum('Admin','Guru','Karyawan','Siswa') COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -170,6 +184,13 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `level`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Agus Bayu Pamungkas', 'Admin', 'abay@students.unnes.ac.id', '2021-06-08 10:25:54', '$2y$10$I0a/L3sehabg4KO0UoME/uEHrNJg6VVN3rEPs1mztYf15W.kQCPr6', NULL, '2021-06-08 10:25:54', '2021-06-08 10:25:54');
 
 --
 -- Indexes for dumped tables
@@ -181,6 +202,18 @@ CREATE TABLE `users` (
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `guru`
+--
+ALTER TABLE `guru`
+  ADD PRIMARY KEY (`nip`);
+
+--
+-- Indexes for table `karyawan`
+--
+ALTER TABLE `karyawan`
+  ADD PRIMARY KEY (`nip`);
 
 --
 -- Indexes for table `migrations`
@@ -233,13 +266,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
