@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2021 at 12:37 PM
+-- Generation Time: Jun 11, 2021 at 04:59 PM
 -- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,7 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `guru` (
   `nama` varchar(100) DEFAULT NULL,
   `nip` int(20) NOT NULL,
-  `jeniskelamin` enum('Laki-laki','Perempuan') NOT NULL,
+  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -61,7 +61,7 @@ CREATE TABLE `guru` (
 CREATE TABLE `karyawan` (
   `nama` varchar(100) DEFAULT NULL,
   `nip` int(20) NOT NULL,
-  `jeniskelamin` enum('Laki-laki','Perempuan') NOT NULL,
+  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -71,7 +71,7 @@ CREATE TABLE `karyawan` (
 -- Dumping data for table `karyawan`
 --
 
-INSERT INTO `karyawan` (`nama`, `nip`, `jeniskelamin`, `alamat`, `created_at`, `updated_at`) VALUES
+INSERT INTO `karyawan` (`nama`, `nip`, `jenis_kelamin`, `alamat`, `created_at`, `updated_at`) VALUES
 ('Agus Bayu Pamungkas', 234561, 'Perempuan', 'Semarang', '2021-06-08 16:30:54', '2021-06-08 16:33:22');
 
 -- --------------------------------------------------------
@@ -161,7 +161,7 @@ CREATE TABLE `siswa` (
   `nis` int(20) NOT NULL,
   `id_kelas` int(20) NOT NULL,
   `nama` varchar(100) DEFAULT NULL,
-  `jeniskelamin` enum('L','P') NOT NULL,
+  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
