@@ -9,7 +9,7 @@
 
     <!-- Page Heading -->
     <h1 class="h1 mb-4 text-gray-800">REKAP DATA <strong>PRESENSI</strong>
-        <i class="h6 mb-4 text-gray-800"> Hanya Untuk guru dan Karyawan </i>
+        <i class="h6 mb-4 text-gray-800"> Hanya Untuk Guru dan Karyawan </i>
     </h1>
 </div>
 <!-- /.container-fluid -->
@@ -32,38 +32,38 @@
                         Lihat <i class="fas fa-print"></i>
                     </a>
                 </div>
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Rekap Presensi Guru dan karyawan</h6>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Rekap Presensi Guru dan karyawan</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <tr>
-                            <th>No</th>
-                            <th> Pegawai </th>
-                            <th> Tanggal </th>
-                            <th> Jam Masuk </th>
-                            <th> Jam Keluar </th>
-                            <th> Lama Kerja </th>
-                        </tr>
-                        @foreach ($presensi as $item)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->user->name }}</td>
-                            <td>{{ $item->tgl }}</td>
-                            <td>{{ $item->jammasuk }}</td>
-                            <td>{{ $item->jamkeluar }}</td>
-                            <td>{{ $item->jamkerja }}</td>
-                        </tr>
-                        @endforeach
-                    </table>
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <tr>
+                                    <th>No</th>
+                                    <th> Pegawai </th>
+                                    <th> Tanggal </th>
+                                    <th> Jam Masuk </th>
+                                    <th> Jam Keluar </th>
+                                    <th> Lama Kerja </th>
+                                </tr>
+                                @foreach ($presensi as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->user->name }}</td>
+                                    <td>{{ $item->tgl }}</td>
+                                    <td>{{ $item->jammasuk }}</td>
+                                    <td>{{ $item->jamkeluar }}</td>
+                                    <td>{{ $item->jamkerja }}</td>
+                                </tr>
+                                @endforeach
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-<!-- /.container-fluid -->
+            <!-- /.container-fluid -->
 
         </div>
     </div>

@@ -33,10 +33,10 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-    <h1 class="h1 mb-4 text-gray-800">PRESENSI <strong>MASUK</strong> 
-        <i class="h6 mb-4 text-gray-800"> Hanya Untuk guru dan Karyawan </i>
-    </h1>
-</div>
+        <h1 class="h1 mb-4 text-gray-800">PRESENSI <strong>MASUK</strong>
+            <i class="h6 mb-4 text-gray-800"> Hanya Untuk Guru dan Karyawan </i>
+        </h1>
+    </div>
     <!-- /.container-fluid -->
     <div class="content">
         <div class="row justify-content-center">

@@ -9,7 +9,7 @@
 
     <!-- Page Heading -->
     <h1 class="h1 mb-4 text-gray-800">REKAP DATA <strong>PRESENSI</strong>
-        <i class="h6 mb-4 text-gray-800"> Hanya Untuk guru dan Karyawan </i>
+        <i class="h6 mb-4 text-gray-800"> Hanya Untuk Guru dan Karyawan </i>
     </h1>
 </div>
 <!-- /.container-fluid -->

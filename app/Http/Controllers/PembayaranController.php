@@ -12,10 +12,17 @@ class PembayaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $dt_pembayaran = pembayaran::all();
-        return view('pembayaran.input-pembayaran', compact('dt_pembayaran'));
+        //dd($request->all());
+        if ($request) {
+            alert()->success('Berhasil!', 'Data Berhasil Ditemukan');
+            $dt_pembayaran = pembayaran::where('nis', 'LIKE', '%' . $request->cari . '%')->get();
+        } else {
+            alert()->error('Gagal!', 'Data Tidak Ditemukan');
+            $dt_pembayaran = pembayaran::all();
+        }
+        return view('pembayaran.tagihan-pembayaran', compact('dt_pembayaran'));
     }
 
     /**
@@ -37,19 +44,19 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-        $gambar=$request->bukti;
-        $namafile=$gambar->getClientOriginalName();
-        $dt_upload=new pembayaran;
-            $dt_upload->nama = $request->nama;
-            $dt_upload->kelas = $request->kelas;
-            $dt_upload->nis = $request->nis;
-            $dt_upload->jenis_pembayaran = $request->jenispembayaran;
-            $dt_upload->kode_pembayaran = $request->total;
-            $dt_upload->tgl_pembayaran = $request->tanggal;
-            $dt_upload->bukti_pembayaran = $namafile;
-            $dt_upload->total_pembayaran = $request->total;
-            
-        $gambar->move(public_path().'/bukti_pembayaran', $namafile);
+        $gambar = $request->bukti;
+        $namafile = $gambar->getClientOriginalName();
+        $dt_upload = new pembayaran;
+        $dt_upload->nama = $request->nama;
+        $dt_upload->kelas = $request->kelas;
+        $dt_upload->nis = $request->nis;
+        $dt_upload->jenis_pembayaran = $request->jenispembayaran;
+        $dt_upload->kode_pembayaran = $request->total;
+        $dt_upload->tgl_pembayaran = $request->tanggal;
+        $dt_upload->bukti_pembayaran = $namafile;
+        $dt_upload->total_pembayaran = $request->total;
+
+        $gambar->move(public_path() . '/bukti_pembayaran', $namafile);
         $dt_upload->save();
         alert()->success('Berhasil!', 'Data Transaksi Pembayaran Berhasil Disimpan');
         return redirect('input-pembayaran');
