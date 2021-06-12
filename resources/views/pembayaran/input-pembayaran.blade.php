@@ -107,6 +107,7 @@
                            <th>Tanggal Pembayaran</th>
                            <th>Total Pembayaran</th>
                            <th>Bukti Pembayaran</th>
+                           <th>Other</th>
                         </tr>
                      </thead>
                      @foreach ($dt_pembayaran as $item)
@@ -123,6 +124,23 @@
                            <td>
                               <a href="{{asset('bukti_pembayaran/'.$item -> bukti_pembayaran)}}" target="_blank" rel="noopener noreferrer"> lihat gambar</a>
                            </td>
+                              <td>
+                                <div class="nav-item dropdown no-arrow"></div>
+                                <a class="btn btn-info btn-icon-split" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </span>
+                                    <span class="text">More</span>
+                                    <!-- Menu Other -->
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                        <a class="dropdown-item" href="{{ url('edit-pembayaran', $item->id) }}">
+                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Edit</a>
+                                        <a class="dropdown-item" href="{{ url('delete-pembayaran', $item->id) }}">
+                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
+                                    </div>
+                                </a>
+                                </div>
+                              </td>
                         </tr>
                         @endforeach
                      </tbody>
@@ -132,7 +150,11 @@
          </div>
       </form>
 
-
+   
    </div>
    <!-- /.container-fluid -->
-   @endsection
+
+@include('sweetalert::alert')
+
+@endsection
+

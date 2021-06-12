@@ -51,6 +51,7 @@ class PembayaranController extends Controller
             
         $gambar->move(public_path().'/bukti_pembayaran', $namafile);
         $dt_upload->save();
+        alert()->success('Berhasil!', 'Data Transaksi Pembayaran Berhasil Disimpan');
         return redirect('input-pembayaran');
     }
 
@@ -73,7 +74,8 @@ class PembayaranController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pem = Pembayaran::findorfail($id);
+        return view('pembayaran.edit-pembayaran', compact('pem'));
     }
 
     /**
@@ -85,7 +87,11 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pem = Pembayaran::findorfail($id);
+        $pem->update($request->all());
+
+        alert()->success('Berhasil!', 'Data Tansaksi Pembayaran Berhasil Diubah');
+        return redirect('input-pembayaran');
     }
 
     /**
@@ -96,6 +102,10 @@ class PembayaranController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pem = Pembayaran::findorfail($id);
+        $pem->delete();
+
+        alert()->info('Data Berhasil Dihapus');
+        return back();
     }
 }

@@ -53,6 +53,9 @@ Route::group(['middleware' => ['auth', 'ceklevel:Admin']], function () {
     Route::get('/delete-siswa/{nis}', 'App\Http\Controllers\SiswaController@destroy')->name('delete-siswa');
     Route::get('/input-pembayaran', 'App\Http\Controllers\PembayaranController@index', 'App\Http\Controllers\PembayaranController@create')->name('input-pembayaran');
     Route::post('/simpan-pembayaran', 'App\Http\Controllers\PembayaranController@store')->name('simpan-pembayaran');
+    Route::get('/edit-pembayaran/{id}', 'App\Http\Controllers\PembayaranController@edit')->name('edit-pembayaran');
+    Route::post('/update-pembayaran/{id}', 'App\Http\Controllers\PembayaranController@update')->name('update-pembayaran');
+    Route::get('/delete-pembayaran/{id}', 'App\Http\Controllers\PembayaranController@destroy')->name('delete-pembayaran');
 
 });
 Route::group(['middleware' => ['auth', 'ceklevel:Admin,Guru,Karyawan']], function () {
