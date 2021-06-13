@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Input Data Siswa | Sistem Administrasi Sekolah')
+@section('title', 'Edit Data Siswa | Sistem Administrasi Sekolah')
 
 @section('container')
 
@@ -16,23 +16,23 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Input Data Siswa Baru</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Edit Data Siswa Baru</h6>
         </div>
 
         <div class="card-body">
-            <form action="{{ route('simpan-siswa') }}" method="POST">
+            <form action="{{ url('update-siswa', $dtsiswa->nis) }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label>Kelas</label>
-                    <input type="text" name="id_kelas" id="id_kelas" class="form-control">
+                    <input type="text" name="id_kelas" id="id_kelas" class="form-control" value="{{ $dtsiswa->id_kelas }}">
                 </div>
                 <div class="form-group">
                     <label>Nama Siswa</label>
-                    <input type="text" name="nama" id="nama" class="form-control">
+                    <input type="text" name="nama" id="nama" class="form-control" value="{{ $dtsiswa->nama }}">
                 </div>
                 <div class="form-group">
                     <label>NIS Siswa</label>
-                    <input type="text" name="nis" id="nis" class="form-control">
+                    <input type="text" name="nis" id="nis" class="form-control" value="{{ $dtsiswa->nis }}">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -50,10 +50,10 @@
                 </div>
                 <div class="form-group">
                     <label>Alamat</label>
-                    <input type="text" name="alamat" id="alamat" class="form-control">
+                    <input type="text" name="alamat" id="alamat" class="form-control" value="{{ $dtsiswa->alamat }}">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Edit Siswa</button>
                 </div>
             </form>
         </div>
