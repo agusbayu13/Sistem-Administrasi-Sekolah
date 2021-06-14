@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 05:41 PM
+-- Generation Time: Jun 14, 2021 at 06:05 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -51,6 +51,27 @@ CREATE TABLE `guru` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `guru`
+--
+
+INSERT INTO `guru` (`nama`, `nip`, `jeniskelamin`, `alamat`, `created_at`, `updated_at`) VALUES
+('Susi', 2021005678, 'Perempuan', 'Jl. Rambutan', '2021-06-14 08:50:43', '2021-06-14 08:50:43'),
+('Rayhan', 2021134080, 'Laki-laki', 'Jl. Banaran', '2021-06-14 08:58:16', '2021-06-14 08:58:16'),
+('Adella', 2021338902, 'Perempuan', 'Jl. Sirandu', '2021-06-14 08:54:41', '2021-06-14 08:54:41'),
+('Budi', 2021379087, 'Laki-laki', 'Jl. Mangga', '2021-06-14 08:51:29', '2021-06-14 08:51:29'),
+('Fuad', 2021389002, 'Laki-laki', 'Jl. Cokro', '2021-06-14 09:02:32', '2021-06-14 09:02:32'),
+('Henny', 2021441250, 'Perempuan', 'Jl. Nangka', '2021-06-14 09:00:30', '2021-06-14 09:00:30'),
+('Anton', 2021450908, 'Laki-laki', 'Jl. Cokro', '2021-06-14 08:55:13', '2021-06-14 08:55:13'),
+('Virna', 2021512009, 'Perempuan', 'Jl. Gahari', '2021-06-14 08:56:58', '2021-06-14 08:56:58'),
+('Mila', 2021621224, 'Perempuan', 'Jl. Waru', '2021-06-14 08:53:40', '2021-06-14 08:53:40'),
+('Gita', 2021625331, 'Perempuan', 'Jl. Rusak', '2021-06-14 09:03:08', '2021-06-14 09:03:08'),
+('Arya', 2021653422, 'Laki-laki', 'Jl. Pisang', '2021-06-14 08:53:00', '2021-06-14 08:53:00'),
+('Elena', 2021654009, 'Perempuan', 'Jl. Kalimasada', '2021-06-14 09:02:00', '2021-06-14 09:02:00'),
+('Ramzi', 2021678943, 'Laki-laki', 'Jl. Manggis', '2021-06-14 08:52:15', '2021-06-14 08:52:15'),
+('Sulis', 2021721321, 'Perempuan', 'Jl. Kalimasada', '2021-06-14 08:59:44', '2021-06-14 08:59:44'),
+('Kirno', 2021760900, 'Laki-laki', 'Jl. Cempaka', '2021-06-14 08:59:02', '2021-06-14 08:59:02');
 
 -- --------------------------------------------------------
 
