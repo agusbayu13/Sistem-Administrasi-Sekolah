@@ -20,69 +20,83 @@
 
       <div class="card">
          <div class="card-body">
-               <form action="{{ url('update-pembayaran', $pem->id) }}" method="POST"> 
-                  @csrf
+            @if(session('errors'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+               Oops! Ada Kesalahan:
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+               </button>
+               <ul>
+                  @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                  @endforeach
+               </ul>
+            </div>
+            @endif
+            <form action="{{ url('update-pembayaran', $pem->id) }}" method="POST">
+               @csrf
 
-                  <div class="form-group">
-                     <label>Kelas</label>
+               <div class="form-group">
+                  <label>Kelas</label>
                   <select class="custom-select" name="kelas">
 
-                     <option value="{{ $pem->kelas }}">Pilih Kelas</option>
+                     <option value="{{ $pem->kelas }}">{{ $pem->kelas }}</option>
                      <option value="10">10</option>
                      <option value="11">11</option>
                      <option value="12">12</option>
 
                   </select>
-                  </div>
+               </div>
 
-                  <div class="form-group">
-                     <label>NIS Siswa</label>
-                     <input type="text" name="nis" id="nis" class="form-control" value="{{ $pem->nis }}">
-                  </div>
+               <div class="form-group">
+                  <label>NIS Siswa</label>
+                  <input type="text" name="nis" id="nis" class="form-control" value="{{ $pem->nis }}">
+               </div>
 
-                  <div class="input-group mb-3">
-                     <div class="input-group-prepend">
-                        <label class="input-group-text">
-                           Jenis Pembayaran
-                        </label>
-                     </div>
-                     <select class="custom-select" name="jenis_pembayaran">
-                        <option value="{{ $pem->jenis_pembayaran }}">Pilih Jenis Pembayaran</option>
-                        <option value="SPP">SPP</option>
-                        <option value="Uang Gedung">Uang Gedung</option>
-                     </select>
+               <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                     <label class="input-group-text">
+                        Jenis Pembayaran
+                     </label>
                   </div>
+                  <select class="custom-select" name="jenis_pembayaran">
+                     <option value="{{ $pem->jenis_pembayaran }}">{{ $pem->jenis_pembayaran }}</option>
+                     <option value="SPP">SPP</option>
+                     <option value="Uang Gedung">Uang Gedung</option>
+                  </select>
+               </div>
 
-                  <div class="form-group">
-                     <label>Kode Pembayaran</label>
-                     <input type="text" name="kode_pembayaran" id="kode_pembayaran" class="form-control" value="{{ $pem->kode_pembayaran }}">
-                  </div>
+               <div class="form-group">
+                  <label>Kode Pembayaran</label>
+                  <input type="text" name="kode_pembayaran" id="kode_pembayaran" class="form-control" value="{{ $pem->kode_pembayaran }}">
+               </div>
 
-                  <div class="form-group">
-                     <label>Tanggal Pembayaran</label>
-                     <input type="date" name="tgl_pembayaran" id="tgl_pembayaran" class="form-control" value="{{ $pem->tgl_pembayaran }}">
-                  </div>
+               <div class="form-group">
+                  <label>Tanggal Pembayaran</label>
+                  <input type="date" name="tgl_pembayaran" id="tgl_pembayaran" class="form-control" value="{{ $pem->tgl_pembayaran }}">
+               </div>
 
-                  <div class="form-group">
-                     <label>Total Pembayaran</label>
-                     <input type="text" name="total_pembayaran" id="total_pembayaran" class="form-control" value="{{ $pem->total_pembayaran }}">
-                  </div>
+               <div class="form-group">
+                  <label>Total Pembayaran</label>
+                  <input type="text" name="total_pembayaran" id="total_pembayaran" class="form-control" value="{{ $pem->total_pembayaran }}">
+               </div>
 
-                  <div class="form-group">
-                     <label>Bukti Pembayaran</label>
-                     <input type="file" name="bukti_pembayaran" id="bukti_pembayaran" value="{{ $pem->bukti_pembayaran }}">
-                  </div>
+               <div class="form-group">
+                  <label>Bukti Pembayaran</label>
+                  <div class="my-1"></div>
+                  <input type="file" name="bukti_pembayaran" id="bukti_pembayaran" value="{{ $pem->bukti_pembayaran }}">
+               </div>
 
-                  <div class="form-group">
-                     <button type="submit" class="btn btn-primary">Edit Data</button>
-                  </div>
+               <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Edit Data</button>
+               </div>
 
-               </form>
+            </form>
          </div>
       </div>
    </div>
 </div>
-   <!-- /.container-fluid -->
+<!-- /.container-fluid -->
 
 @include('sweetalert::alert')
 

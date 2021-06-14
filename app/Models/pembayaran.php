@@ -9,5 +9,12 @@ class pembayaran extends Model
 {
    protected $table = 'pembayaran';
    protected $primaryKey = 'id';
-   protected $fillable = ['id', 'nama', 'kelas', 'nis', 'jenis_pembayaran', 'kode_pembayaran', 'tgl_pembayaran', 'bukti_pembayaran', 'total_pembayaran'];
+   protected $fillable = [
+      'id', 'nama', 'kelas', 'nis', 'jenis_pembayaran', 'kode_pembayaran', 'tgl_pembayaran', 'bukti_pembayaran', 'total_pembayaran'
+   ];
+
+   public function siswa()
+   {
+      return $this->belongsTo(siswa::class, 'nis');
+   }
 }

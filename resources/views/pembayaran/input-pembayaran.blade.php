@@ -20,6 +20,19 @@
 
       <div class="card">
          <div class="card-body">
+            @if(session('errors'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+               Oops! Ada Kesalahan:
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+               </button>
+               <ul>
+                  @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                  @endforeach
+               </ul>
+            </div>
+            @endif
             <form method="post" action="{{ route('simpan-pembayaran') }}" enctype="multipart/form-data">
                @csrf
 
@@ -72,6 +85,7 @@
 
                <div class="form-group">
                   <label>Bukti Pembayaran</label>
+                  <div class="my-1"></div>
                   <input type="file" name="bukti" id="bukti">
                </div>
 

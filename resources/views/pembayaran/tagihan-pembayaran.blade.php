@@ -47,7 +47,7 @@
                                 <tbody>
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$item->nama}}</td>
+                                        <td>{{$item->siswa->nama}}</td>
                                         <td>{{$item->kelas}}</td>
                                         <td>{{$item->nis}}</td>
                                         <td>{{$item->jenis_pembayaran}}</td>

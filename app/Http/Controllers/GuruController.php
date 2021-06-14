@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Models\Guru;
 use Illuminate\Http\Request;
 
@@ -37,6 +38,28 @@ class GuruController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        $rules = [
+            'nama'          => 'required|string',
+            'nip'           => 'required|string',
+            'jeniskelamin'  => 'required|string',
+            'alamat'        => 'required|string',
+
+        ];
+
+        $messages = [
+            'nama.required'          => 'Nama tidak boleh kosong',
+            'nip.required'           => 'NIP tidak boleh kosong',
+            'jeniskelamin.required'  => 'Jenis tidak boleh kosong',
+            'alamat.required'        => 'Alamat tidak boleh kosong',
+
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+
+            return redirect()->back()->withErrors($validator)->withInput($request->all);
+        }
         Guru::create([
             'nama' => $request->nama,
             'nip' => $request->nip,
@@ -80,6 +103,28 @@ class GuruController extends Controller
      */
     public function update(Request $request, $nip)
     {
+        $rules = [
+            'nama'          => 'required|string',
+            'nip'           => 'required|string',
+            'jeniskelamin'  => 'required|string',
+            'alamat'        => 'required|string',
+
+        ];
+
+        $messages = [
+            'nama.required'          => 'Nama tidak boleh kosong',
+            'nip.required'           => 'NIP tidak boleh kosong',
+            'jeniskelamin.required'  => 'Jenis kelamin tidak boleh kosong',
+            'alamat.required'        => 'Alamat tidak boleh kosong',
+
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+
+            return redirect()->back()->withErrors($validator)->withInput($request->all);
+        }
         $gur = Guru::findorfail($nip);
         $gur->update($request->all());
 
@@ -95,6 +140,7 @@ class GuruController extends Controller
      */
     public function destroy($nip)
     {
+
         $gur = Guru::findorfail($nip);
         $gur->delete();
 

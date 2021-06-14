@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Models\pembayaran;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class PembayaranController extends Controller
         //dd($request->all());
         if ($request) {
             alert()->success('Berhasil!', 'Data Berhasil Ditemukan');
-            $dt_pembayaran = pembayaran::where('nis', 'LIKE', '%' . $request->cari . '%')->get();
+            $dt_pembayaran = pembayaran::with('siswa')->where('nis', 'LIKE', '%' . $request->cari . '%')->get();;
         } else {
             alert()->error('Gagal!', 'Data Tidak Ditemukan');
             $dt_pembayaran = pembayaran::all();
@@ -44,6 +45,34 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        $rules = [
+            'kelas'                => 'required|string',
+            'nis'                  => 'required|string',
+            'jenis_pembayaran'     => 'required|string',
+            'kode_pembayaran'      => 'required|string',
+            'tgl_pembayaran'       => 'required|date',
+            'bukti_pembayaran'     => 'required|string',
+            'total_pembayaran'     => 'required|string',
+
+        ];
+
+        $messages = [
+
+            'kelas.required'                => 'Kelas tidak boleh kosong',
+            'nis.required'                  => 'NIS tidak boleh kosong',
+            'jenis_pembayaran.required'     => 'Jenis Pembayaran tidak boleh kosong',
+            'kode_pembayaran.required'      => 'Kode Pembayaran tidak boleh kosong',
+            'tgl_pembayaran.required'       => 'Tanggal Pembayaran tidak boleh kosong',
+            'bukti_pembayaran.required'     => 'Bukti Pembayaran tidak boleh kosong',
+            'total_pembayaran.required'     => 'Total Pembayaran tidak boleh kosong',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+
+            return redirect()->back()->withErrors($validator)->withInput($request->all);
+        }
         $gambar = $request->bukti;
         $namafile = $gambar->getClientOriginalName();
         $dt_upload = new pembayaran;
@@ -53,6 +82,7 @@ class PembayaranController extends Controller
         $dt_upload->jenis_pembayaran = $request->jenispembayaran;
         $dt_upload->kode_pembayaran = $request->total;
         $dt_upload->tgl_pembayaran = $request->tanggal;
+        //$dt_upload->tgl_pembayaran = \Carbon\Carbon::now();
         $dt_upload->bukti_pembayaran = $namafile;
         $dt_upload->total_pembayaran = $request->total;
 
@@ -94,6 +124,36 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'kelas'                => 'required|string',
+            'nis'                  => 'required|string',
+            'jenis_pembayaran'     => 'required|string',
+            'kode_pembayaran'      => 'required|string',
+            'tgl_pembayaran'       => 'required|date',
+            'bukti_pembayaran'     => 'required|string',
+            'total_pembayaran'     => 'required|string',
+
+        ];
+
+        $messages = [
+
+            'kelas.required'                => 'Kelas tidak boleh kosong',
+            'nis.required'                  => 'NIS tidak boleh kosong',
+            'jenis_pembayaran.required'     => 'Jenis Pembayaran tidak boleh kosong',
+            'kode_pembayaran.required'      => 'Kode Pembayaran tidak boleh kosong',
+            'tgl_pembayaran.required'       => 'Tanggal Pembayaran tidak boleh kosong',
+            'bukti_pembayaran.required'     => 'Harap masukkan ulang bukti pembayaran | Bukti Pembayaran tidak boleh kosong',
+            'total_pembayaran.required'     => 'Total Pembayaran tidak boleh kosong',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+
+            return redirect()->back()->withErrors($validator)->withInput($request->all);
+        }
+        $gambar = $request->bukti;
+        $namafile = $gambar->getClientOriginalName();
         $pem = Pembayaran::findorfail($id);
         $pem->update($request->all());
 

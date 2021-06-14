@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
 
@@ -37,6 +38,28 @@ class KaryawanController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        $rules = [
+            'nama'          => 'required|string',
+            'nip'           => 'required|string',
+            'jeniskelamin'  => 'required|string',
+            'alamat'        => 'required|string',
+
+        ];
+
+        $messages = [
+            'nama.required'          => 'Nama Karyawan tidak boleh kosong',
+            'nip.required'           => 'NIP tidak boleh kosong',
+            'jeniskelamin.required'  => 'Jenis Kelamin tidak boleh kosong',
+            'alamat.required'        => 'Alamat tidak boleh kosong',
+
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+
+            return redirect()->back()->withErrors($validator)->withInput($request->all);
+        }
         Karyawan::create([
             'nama' => $request->nama,
             'nip' => $request->nip,
@@ -80,6 +103,28 @@ class KaryawanController extends Controller
      */
     public function update(Request $request, $nip)
     {
+        $rules = [
+            'nama'          => 'required|string',
+            'nip'           => 'required|string',
+            'jeniskelamin'  => 'required|string',
+            'alamat'        => 'required|string',
+
+        ];
+
+        $messages = [
+            'nama.required'          => 'Nama Karyawan tidak boleh kosong',
+            'nip.required'           => 'NIP tidak boleh kosong',
+            'jeniskelamin.required'  => 'Jenis Kelamin tidak boleh kosong',
+            'alamat.required'        => 'Alamat tidak boleh kosong',
+
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+
+            return redirect()->back()->withErrors($validator)->withInput($request->all);
+        }
         $kar = Karyawan::findorfail($nip);
         $kar->update($request->all());
 

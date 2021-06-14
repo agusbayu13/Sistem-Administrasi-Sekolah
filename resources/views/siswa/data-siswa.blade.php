@@ -8,7 +8,7 @@
 <!-- Page Heading Siswa-->
 <div class="container-fluid">
 
-    <h1 class="h1 mb-4 text-gray-800">DATA <strong>Siswa</strong>
+    <h1 class="h1 mb-4 text-gray-800">DATA <strong>SISWA</strong>
         <i class="h6 mb-4 text-gray-800"> SMA 1 Jonggol </i>
     </h1>
     <!-- DataTales Example -->
@@ -43,7 +43,7 @@
                     @foreach ($dtsiswa as $item)
                     <tbody>
                         <tr>
-                        <td>{{$loop->iteration}}</td>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$item->nama}}</td>
                             <td>{{$item->id_kelas}}</td>
                             <td>{{$item->nis}}</td>
