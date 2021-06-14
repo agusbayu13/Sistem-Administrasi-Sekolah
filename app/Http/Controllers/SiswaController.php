@@ -145,6 +145,9 @@ class SiswaController extends Controller
     public function destroy($nis)
     {
         $sis = siswa::findorfail($nis);
-        $sis->delete();
+            $sis->delete();
+    
+            alert()->info('Data Berhasil Dihapus');
+            return back();
     }
 }
