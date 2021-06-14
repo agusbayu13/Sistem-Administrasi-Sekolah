@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 08:53 AM
+-- Generation Time: Jun 14, 2021 at 09:56 AM
 -- Server version: 10.4.18-MariaDB
--- PHP Version: 7.4.16
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -142,15 +142,22 @@ INSERT INTO `pembayaran` (`id`, `nis`, `nama`, `kelas`, `tgl_pembayaran`, `kode_
 
 CREATE TABLE `presensi` (
   `nip` int(20) DEFAULT NULL,
-  `id` int(20) NOT NULL,
+  `id` int(20) UNSIGNED NOT NULL,
   `user_id` int(20) NOT NULL,
   `tgl` date NOT NULL,
   `jammasuk` time DEFAULT NULL,
   `jamkeluar` time DEFAULT NULL,
-  `jamkerja` datetime DEFAULT NULL,
+  `jamkerja` time DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `presensi`
+--
+
+INSERT INTO `presensi` (`nip`, `id`, `user_id`, `tgl`, `jammasuk`, `jamkeluar`, `jamkerja`, `created_at`, `updated_at`) VALUES
+(NULL, 2, 1, '2021-06-14', '14:51:55', '14:52:01', '00:00:06', '2021-06-14 00:51:55', '2021-06-14 00:52:01');
 
 -- --------------------------------------------------------
 
@@ -274,6 +281,12 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `pembayaran`
   MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `presensi`
+--
+ALTER TABLE `presensi`
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
