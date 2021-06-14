@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2021 at 04:59 PM
+-- Generation Time: Jun 14, 2021 at 08:41 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -46,7 +46,7 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `guru` (
   `nama` varchar(100) DEFAULT NULL,
   `nip` int(20) NOT NULL,
-  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
+  `jeniskelamin` enum('Laki-laki','Perempuan') NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -61,7 +61,7 @@ CREATE TABLE `guru` (
 CREATE TABLE `karyawan` (
   `nama` varchar(100) DEFAULT NULL,
   `nip` int(20) NOT NULL,
-  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
+  `jeniskelamin` enum('Laki-laki','Perempuan') NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -71,7 +71,7 @@ CREATE TABLE `karyawan` (
 -- Dumping data for table `karyawan`
 --
 
-INSERT INTO `karyawan` (`nama`, `nip`, `jenis_kelamin`, `alamat`, `created_at`, `updated_at`) VALUES
+INSERT INTO `karyawan` (`nama`, `nip`, `jeniskelamin`, `alamat`, `created_at`, `updated_at`) VALUES
 ('Agus Bayu Pamungkas', 234561, 'Perempuan', 'Semarang', '2021-06-08 16:30:54', '2021-06-08 16:33:22');
 
 -- --------------------------------------------------------
@@ -141,12 +141,13 @@ INSERT INTO `pembayaran` (`id`, `nis`, `nama`, `kelas`, `tgl_pembayaran`, `kode_
 --
 
 CREATE TABLE `presensi` (
-  `NIP` int(20) NOT NULL,
+  `nip` int(20) NOT NULL,
   `id` int(20) NOT NULL,
+  `user_id` int(20) NOT NULL,
   `tgl` date NOT NULL,
-  `jam_masuk` time NOT NULL,
-  `jam_keluar` time NOT NULL,
-  `jam_kerja` datetime NOT NULL,
+  `jammasuk` time DEFAULT NULL,
+  `jamkeluar` time DEFAULT NULL,
+  `jamkerja` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -237,7 +238,13 @@ ALTER TABLE `pembayaran`
 -- Indexes for table `presensi`
 --
 ALTER TABLE `presensi`
-  ADD PRIMARY KEY (`NIP`,`id`) USING BTREE;
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `siswa`
+--
+ALTER TABLE `siswa`
+  ADD PRIMARY KEY (`nis`);
 
 --
 -- Indexes for table `users`
