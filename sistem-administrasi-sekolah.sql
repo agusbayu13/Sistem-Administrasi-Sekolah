@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 08:41 AM
+-- Generation Time: Jun 14, 2021 at 08:53 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -141,7 +141,7 @@ INSERT INTO `pembayaran` (`id`, `nis`, `nama`, `kelas`, `tgl_pembayaran`, `kode_
 --
 
 CREATE TABLE `presensi` (
-  `nip` int(20) NOT NULL,
+  `nip` int(20) DEFAULT NULL,
   `id` int(20) NOT NULL,
   `user_id` int(20) NOT NULL,
   `tgl` date NOT NULL,
