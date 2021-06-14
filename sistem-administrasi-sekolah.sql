@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 09:56 AM
+-- Generation Time: Jun 14, 2021 at 05:25 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -167,13 +167,34 @@ INSERT INTO `presensi` (`nip`, `id`, `user_id`, `tgl`, `jammasuk`, `jamkeluar`, 
 
 CREATE TABLE `siswa` (
   `nis` int(20) NOT NULL,
-  `id_kelas` int(20) NOT NULL,
+  `id_kelas` varchar(20) NOT NULL,
   `nama` varchar(100) DEFAULT NULL,
   `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`nis`, `id_kelas`, `nama`, `jenis_kelamin`, `alamat`, `created_at`, `updated_at`) VALUES
+(213043001, 'X MIPA 1', 'Ahmad', 'Laki-laki', 'Jl. Sejahtera', '2021-06-14 08:08:04', '2021-06-14 08:15:03'),
+(213043002, 'X MIPA 2', 'Alfina', 'Perempuan', 'Jl. Gaharu', '2021-06-14 08:11:12', '2021-06-14 08:15:16'),
+(213043003, 'X MIPA 3', 'Ariqah', 'Perempuan', 'Jl. Mangga', '2021-06-14 08:11:40', '2021-06-14 08:11:40'),
+(213043004, 'X MIPA 4', 'Arba\'an', 'Perempuan', 'Jl. in aja', '2021-06-14 08:12:16', '2021-06-14 08:15:42'),
+(213043005, 'X MIPA 5', 'Samuel', 'Laki-laki', 'Jl. Manggis', '2021-06-14 08:12:38', '2021-06-14 08:15:53'),
+(213044001, 'XI MIPA 1', 'Abay', 'Laki-laki', 'Jl. Sehati', '2021-06-14 08:16:49', '2021-06-14 08:16:49'),
+(213044002, 'XI MIPA 2', 'Audrey', 'Perempuan', 'Jl. Cempaka Sari', '2021-06-14 08:18:02', '2021-06-14 08:18:02'),
+(213044003, 'XI MIPA 3', 'Nova', 'Laki-laki', 'Jl. Belimbing', '2021-06-14 08:18:50', '2021-06-14 08:18:50'),
+(213044004, 'XI MIPA 4', 'Diana', 'Perempuan', 'Jl. Seharian', '2021-06-14 08:19:24', '2021-06-14 08:19:24'),
+(213044005, 'XI MIPA 5', 'Edo', 'Laki-laki', 'Jl. Kelengkeng', '2021-06-14 08:19:53', '2021-06-14 08:19:53'),
+(213045001, 'XII MIPA 1', 'Vivin', 'Perempuan', 'Jl. Pete', '2021-06-14 08:20:49', '2021-06-14 08:20:49'),
+(213045002, 'XII MIPA 2', 'Tasya', 'Perempuan', 'Jl. Cakrawala', '2021-06-14 08:21:31', '2021-06-14 08:21:31'),
+(213045003, 'XII MIPA 3', 'Riyan', 'Laki-laki', 'Jl. Santai', '2021-06-14 08:22:52', '2021-06-14 08:22:52'),
+(213045004, 'XII MIPA 4', 'Julian', 'Laki-laki', 'Jl. Sahara', '2021-06-14 08:23:42', '2021-06-14 08:23:42'),
+(213045005, 'XII MIPA 5', 'Rangga', 'Laki-laki', 'Jl. Kenangan', '2021-06-14 08:24:20', '2021-06-14 08:24:20');
 
 -- --------------------------------------------------------
 
@@ -198,7 +219,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `level`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Agus Bayu Pamungkas', 'Admin', 'abay@students.unnes.ac.id', '2021-06-08 10:25:54', '$2y$10$I0a/L3sehabg4KO0UoME/uEHrNJg6VVN3rEPs1mztYf15W.kQCPr6', NULL, '2021-06-08 10:25:54', '2021-06-08 10:25:54');
+(1, 'Agus Bayu Pamungkas', 'Admin', 'abay@students.unnes.ac.id', '2021-06-08 10:25:54', '$2y$10$I0a/L3sehabg4KO0UoME/uEHrNJg6VVN3rEPs1mztYf15W.kQCPr6', NULL, '2021-06-08 10:25:54', '2021-06-08 10:25:54'),
+(2, 'Ariqah Salma Intannisa', 'Admin', 'ariqahsalma@students.unnes.ac.id', '2021-06-14 07:56:52', '$2y$10$GAce7HYNm3gALnEQA/uvTOCqXptSNItxyDnpEu5eDJuUY4h2V2emq', NULL, '2021-06-14 07:56:52', '2021-06-14 07:56:52');
 
 --
 -- Indexes for dumped tables
@@ -292,7 +314,7 @@ ALTER TABLE `presensi`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
