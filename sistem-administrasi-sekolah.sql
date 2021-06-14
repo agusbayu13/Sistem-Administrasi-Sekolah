@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 06:05 PM
+-- Generation Time: Jun 14, 2021 at 06:42 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -220,6 +220,7 @@ INSERT INTO `siswa` (`nis`, `id_kelas`, `nama`, `jenis_kelamin`, `alamat`, `crea
 (213043003, 'X MIPA 3', 'Ariqah', 'Perempuan', 'Jl. Mangga', '2021-06-14 08:11:40', '2021-06-14 08:11:40'),
 (213043004, 'X MIPA 4', 'Arba\'an', 'Perempuan', 'Jl. in aja', '2021-06-14 08:12:16', '2021-06-14 08:15:42'),
 (213043005, 'X MIPA 5', 'Samuel', 'Laki-laki', 'Jl. Manggis', '2021-06-14 08:12:38', '2021-06-14 08:15:53'),
+(213043025, 'X IPS 3', 'Anya', 'Perempuan', 'Jl. Rambutan', '2021-06-14 09:39:49', '2021-06-14 09:39:49'),
 (213044001, 'XI MIPA 1', 'Abay', 'Laki-laki', 'Jl. Sehati', '2021-06-14 08:16:49', '2021-06-14 08:16:49'),
 (213044002, 'XI MIPA 2', 'Audrey', 'Perempuan', 'Jl. Cempaka Sari', '2021-06-14 08:18:02', '2021-06-14 08:18:02'),
 (213044003, 'XI MIPA 3', 'Nova', 'Laki-laki', 'Jl. Belimbing', '2021-06-14 08:18:50', '2021-06-14 08:18:50'),
