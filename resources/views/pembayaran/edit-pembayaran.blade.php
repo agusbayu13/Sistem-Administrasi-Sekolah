@@ -37,42 +37,42 @@
                @csrf
 
                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text">
-                            Kelas
-                        </label>
-                    </div>
-                    <select class="custom-select" name="kelas">
+                  <div class="input-group-prepend">
+                     <label class="input-group-text">
+                        Kelas
+                     </label>
+                  </div>
+                  <select class="custom-select" name="kelas">
 
-                        <option value="">Pilih Kelas</option>
-                        <option value="X MIPA 1">X MIPA 1</option>
-                        <option value="X MIPA 2">X MIPA 2</option>
-                        <option value="X MIPA 3">X MIPA 3</option>
-                        <option value="X MIPA 4">X MIPA 4</option>
-                        <option value="X MIPA 5">X MIPA 5</option>
-                        <option value="XI MIPA 1">XI MIPA 1</option>
-                        <option value="XI MIPA 2">XI MIPA 2</option>
-                        <option value="XI MIPA 3">XI MIPA 3</option>
-                        <option value="XI MIPA 4">XI MIPA 4</option>
-                        <option value="XI MIPA 5">XI MIPA 5</option>
-                        <option value="XII MIPA 1">XII MIPA 1</option>
-                        <option value="XII MIPA 2">XII MIPA 2</option>
-                        <option value="XII MIPA 3">XII MIPA 3</option>
-                        <option value="XII MIPA 4">XII MIPA 4</option>
-                        <option value="XII MIPA 5">XII MIPA 5</option>
-                        <option value="X IPS 1">X IPS 1</option>
-                        <option value="X IPS 2">X IPS 2</option>
-                        <option value="X IPS 3">X IPS 3</option>
-                        <option value="XI IPS 1">XI IPS 1</option>
-                        <option value="XI IPS 2">XI IPS 2</option>
-                        <option value="XI IPS 3">XI IPS 3</option>
-                        <option value="XII IPS 1">XII IPS 1</option>
-                        <option value="XII IPS 2">XII IPS 2</option>
-                        <option value="XII IPS 3">XII IPS 3</option>
-                        
+                     <option value="{{ $pem->kelas }}">Pilih Kelas</option>
+                     <option value="X MIPA 1">X MIPA 1</option>
+                     <option value="X MIPA 2">X MIPA 2</option>
+                     <option value="X MIPA 3">X MIPA 3</option>
+                     <option value="X MIPA 4">X MIPA 4</option>
+                     <option value="X MIPA 5">X MIPA 5</option>
+                     <option value="XI MIPA 1">XI MIPA 1</option>
+                     <option value="XI MIPA 2">XI MIPA 2</option>
+                     <option value="XI MIPA 3">XI MIPA 3</option>
+                     <option value="XI MIPA 4">XI MIPA 4</option>
+                     <option value="XI MIPA 5">XI MIPA 5</option>
+                     <option value="XII MIPA 1">XII MIPA 1</option>
+                     <option value="XII MIPA 2">XII MIPA 2</option>
+                     <option value="XII MIPA 3">XII MIPA 3</option>
+                     <option value="XII MIPA 4">XII MIPA 4</option>
+                     <option value="XII MIPA 5">XII MIPA 5</option>
+                     <option value="X IPS 1">X IPS 1</option>
+                     <option value="X IPS 2">X IPS 2</option>
+                     <option value="X IPS 3">X IPS 3</option>
+                     <option value="XI IPS 1">XI IPS 1</option>
+                     <option value="XI IPS 2">XI IPS 2</option>
+                     <option value="XI IPS 3">XI IPS 3</option>
+                     <option value="XII IPS 1">XII IPS 1</option>
+                     <option value="XII IPS 2">XII IPS 2</option>
+                     <option value="XII IPS 3">XII IPS 3</option>
 
-                    </select>
-                </div>
+
+                  </select>
+               </div>
 
                <div class="form-group">
                   <label>NIS Siswa</label>
@@ -86,7 +86,7 @@
                      </label>
                   </div>
                   <select class="custom-select" name="jenis_pembayaran">
-                     <option value="{{ $pem->jenis_pembayaran }}">{{ $pem->jenis_pembayaran }}</option>
+                     <option value="{{ $pem->jenis_pembayaran }}">Pilih Jenis Pembayaran</option>
                      <option value="SPP">SPP</option>
                      <option value="Uang Gedung">Uang Gedung</option>
                   </select>
@@ -110,7 +110,7 @@
                <div class="form-group">
                   <label>Bukti Pembayaran</label>
                   <div class="my-1"></div>
-                  <input type="file" name="bukti_pembayaran" id="bukti_pembayaran" value="{{ $pem->bukti_pembayaran }}">
+                  <input type="file" name="bukti" id="bukti" value="{{ $pem->bukti_pembayaran }}">
                </div>
 
                <div class="form-group">

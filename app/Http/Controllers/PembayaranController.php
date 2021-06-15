@@ -51,7 +51,7 @@ class PembayaranController extends Controller
             'jenis_pembayaran'     => 'required|string',
             'kode_pembayaran'      => 'required|string',
             'tgl_pembayaran'       => 'required|date',
-            'bukti_pembayaran'     => 'required|string',
+            'bukti'                => 'required',
             'total_pembayaran'     => 'required|string',
 
         ];
@@ -63,7 +63,7 @@ class PembayaranController extends Controller
             'jenis_pembayaran.required'     => 'Jenis Pembayaran tidak boleh kosong',
             'kode_pembayaran.required'      => 'Kode Pembayaran tidak boleh kosong',
             'tgl_pembayaran.required'       => 'Tanggal Pembayaran tidak boleh kosong',
-            'bukti_pembayaran.required'     => 'Bukti Pembayaran tidak boleh kosong',
+            'bukti.required'                => 'Bukti Pembayaran tidak boleh kosong',
             'total_pembayaran.required'     => 'Total Pembayaran tidak boleh kosong',
         ];
 
@@ -79,12 +79,12 @@ class PembayaranController extends Controller
         $dt_upload->nama = $request->nama;
         $dt_upload->kelas = $request->kelas;
         $dt_upload->nis = $request->nis;
-        $dt_upload->jenis_pembayaran = $request->jenispembayaran;
-        $dt_upload->kode_pembayaran = $request->total;
-        $dt_upload->tgl_pembayaran = $request->tanggal;
+        $dt_upload->jenis_pembayaran = $request->jenis_pembayaran;
+        $dt_upload->kode_pembayaran = $request->kode_pembayaran;
+        $dt_upload->tgl_pembayaran = $request->tgl_pembayaran;
         //$dt_upload->tgl_pembayaran = \Carbon\Carbon::now();
         $dt_upload->bukti_pembayaran = $namafile;
-        $dt_upload->total_pembayaran = $request->total;
+        $dt_upload->total_pembayaran = $request->total_pembayaran;
 
         $gambar->move(public_path() . '/bukti_pembayaran', $namafile);
         $dt_upload->save();
@@ -130,7 +130,7 @@ class PembayaranController extends Controller
             'jenis_pembayaran'     => 'required|string',
             'kode_pembayaran'      => 'required|string',
             'tgl_pembayaran'       => 'required|date',
-            'bukti_pembayaran'     => 'required|string',
+            'bukti_pembayaran'                => 'required',
             'total_pembayaran'     => 'required|string',
 
         ];
@@ -142,7 +142,7 @@ class PembayaranController extends Controller
             'jenis_pembayaran.required'     => 'Jenis Pembayaran tidak boleh kosong',
             'kode_pembayaran.required'      => 'Kode Pembayaran tidak boleh kosong',
             'tgl_pembayaran.required'       => 'Tanggal Pembayaran tidak boleh kosong',
-            'bukti_pembayaran.required'     => 'Harap masukkan ulang bukti pembayaran | Bukti Pembayaran tidak boleh kosong',
+            'bukti_pembayaran.required'                => 'Harap masukkan ulang bukti pembayaran | Bukti Pembayaran tidak boleh kosong',
             'total_pembayaran.required'     => 'Total Pembayaran tidak boleh kosong',
         ];
 
