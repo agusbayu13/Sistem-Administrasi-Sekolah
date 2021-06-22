@@ -5,8 +5,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\GuruController;
-use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\AboutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,9 +30,7 @@ Route::post('register', [AuthController::class, 'register']);
 Route::group(['middleware' => ['auth', 'ceklevel:Admin,Guru,Karyawan,Siswa']], function () {
     Route::get('home', [HomeController::class, 'index'])->name('home');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/about', function () {
-        return view('About');
-    });
+    Route::get('/about', [AboutController::class, 'index'])->name('about');
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:Admin']], function () {
@@ -39,11 +40,11 @@ Route::group(['middleware' => ['auth', 'ceklevel:Admin']], function () {
     Route::get('/edit-guru/{nip}', 'App\Http\Controllers\GuruController@edit')->name('edit-guru');
     Route::post('/update-guru/{nip}', 'App\Http\Controllers\GuruController@update')->name('update-guru');
     Route::get('/delete-guru/{nip}', 'App\Http\Controllers\GuruController@destroy')->name('delete-guru');
-    Route::get('/data-karyawan', 'App\Http\Controllers\karyawanController@index')->name('data-karyawan');
-    Route::get('/input-karyawan', 'App\Http\Controllers\karyawanController@create')->name('input-karyawan');
-    Route::post('/simpan-karyawan', 'App\Http\Controllers\karyawanController@store')->name('simpan-karyawan');
+    Route::get('/data-karyawan', 'App\Http\Controllers\KaryawanController@index')->name('data-karyawan');
+    Route::get('/input-karyawan', 'App\Http\Controllers\KaryawanController@create')->name('input-karyawan');
+    Route::post('/simpan-karyawan', 'App\Http\Controllers\KaryawanController@store')->name('simpan-karyawan');
     Route::get('/edit-karyawan/{nip}', 'App\Http\Controllers\KaryawanController@edit')->name('edit-karyawan');
-    Route::post('/update-karyawan/{nip}', 'App\Http\Controllers\karyawanController@update')->name('update-karyawan');
+    Route::post('/update-karyawan/{nip}', 'App\Http\Controllers\KaryawanController@update')->name('update-karyawan');
     Route::get('/delete-karyawan/{nip}', 'App\Http\Controllers\KaryawanController@destroy')->name('delete-karyawan');
     Route::get('/data-siswa', 'App\Http\Controllers\SiswaController@index')->name('data-siswa');
     Route::get('/input-siswa', 'App\Http\Controllers\SiswaController@create')->name('input-siswa');
@@ -52,29 +53,27 @@ Route::group(['middleware' => ['auth', 'ceklevel:Admin']], function () {
     Route::post('/update-siswa/{nis}', 'App\Http\Controllers\SiswaController@update')->name('update-siswa');
     Route::get('/delete-siswa/{nis}', 'App\Http\Controllers\SiswaController@destroy')->name('delete-siswa');
     Route::get('/tagihan-pembayaran', 'App\Http\Controllers\PembayaranController@index')->name('tagihan-pembayaran');
+    Route::get('/semua-tagihan-pembayaran', 'App\Http\Controllers\PembayaranController@indexsemua')->name('semua-tagihan-pembayaran');
     Route::get('/input-pembayaran', 'App\Http\Controllers\PembayaranController@create')->name('input-pembayaran');
     Route::post('/simpan-pembayaran', 'App\Http\Controllers\PembayaranController@store')->name('simpan-pembayaran');
     Route::get('/edit-pembayaran/{id}', 'App\Http\Controllers\PembayaranController@edit')->name('edit-pembayaran');
     Route::post('/update-pembayaran/{id}', 'App\Http\Controllers\PembayaranController@update')->name('update-pembayaran');
     Route::get('/delete-pembayaran/{id}', 'App\Http\Controllers\PembayaranController@destroy')->name('delete-pembayaran');
-    Route::get('/tagihan', function () {
-        return view('tagihan');
-    });
+    Route::get('/tagihan', 'App\Http\Controllers\PembayaranController@IndexTagihan')->name('tagihan');
 });
+
 Route::group(['middleware' => ['auth', 'ceklevel:Admin,Guru,Karyawan']], function () {
-    Route::post('/simpan-masuk', [PresensiController::class, 'store'])->name('simpan-masuk');
-    Route::get('presensi-masuk', [PresensiController::class, 'index'])->name('presensi-masuk');
-    Route::get('presensi-keluar', [PresensiController::class, 'keluar'])->name('presensi-keluar');
-    Route::post('ubah-presensi', [PresensiController::class, 'presensipulang'])->name('ubah-presensi');
-    Route::get('filter-data', [PresensiController::class, 'halamanrekap'])->name('filter-data');
-    Route::get('filter-data/{tglawal}/{tglakhir}', [PresensiController::class, 'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
+    Route::post('/simpan-masuk', 'App\Http\Controllers\PresensiController@store')->name('simpan-masuk');
+    Route::get('presensi-masuk', 'App\Http\Controllers\PresensiController@index')->name('presensi-masuk');
+    Route::get('presensi-keluar', 'App\Http\Controllers\PresensiController@keluar')->name('presensi-keluar');
+    Route::post('ubah-presensi', 'App\Http\Controllers\PresensiController@presensipulang')->name('ubah-presensi');
+    Route::get('filter-data', 'App\Http\Controllers\PresensiController@halamanrekap')->name('filter-data');
+    Route::get('filter-data/{tglawal}/{tglakhir}', 'App\Http\Controllers\PresensiController@tampildatakeseluruhan')->name('filter-data-keseluruhan');
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:Admin,Siswa']], function () {
     Route::get('/tagihan-pembayaran', 'App\Http\Controllers\PembayaranController@index')->name('tagihan-pembayaran');
     Route::get('/input-pembayaran', 'App\Http\Controllers\PembayaranController@create')->name('input-pembayaran');
     Route::post('/simpan-pembayaran', 'App\Http\Controllers\PembayaranController@store')->name('simpan-pembayaran');
-    Route::get('/tagihan', function () {
-        return view('tagihan');
-    });
+    Route::get('/tagihan', 'App\Http\Controllers\PembayaranController@IndexTagihan')->name('tagihan');
 });

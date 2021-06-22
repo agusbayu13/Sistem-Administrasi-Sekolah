@@ -7,13 +7,11 @@
 <!-- Begin Page Content -->
 <!-- Page Heading Siswa-->
 <div class="container-fluid">
-
     <h1 class="h1 mb-4 text-gray-800">DATA <strong>SISWA</strong>
         <i class="h6 mb-4 text-gray-800"> SMA 1 Jonggol </i>
     </h1>
+
     <!-- DataTales Example -->
-
-
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Data Siswa</h6>
@@ -56,6 +54,7 @@
                                         <i class="fas fa-arrow-right"></i>
                                     </span>
                                     <span class="text">More</span>
+
                                     <!-- Menu Other -->
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                         <a class="dropdown-item" href="{{ url('edit-siswa', $item->nis) }}">
@@ -76,11 +75,7 @@
     </div>
 </div>
 
-<!-- /.container-fluid -->
-
-
 <!-- End of Main Content -->
-
 
 <!-- /.container-fluid -->
 @include('sweetalert::alert')

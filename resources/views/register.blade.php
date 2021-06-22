@@ -41,7 +41,7 @@
                                 <div class="card-body">
                                     @if(session('errors'))
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        Something it's wrong:
+                                        Maaf, Terjadi sebuah kesalahan:
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">×</span>
                                         </button>
@@ -57,17 +57,17 @@
                                         <input type="text" name="name" class="form-control" placeholder="Nama Lengkap">
                                     </div>
                                     <div class="input-group mb-3">
-                                      <div class="input-group-prepend">
-                                        <label class="input-group-text">
-                                            Jenis User
-                                          </label>
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text">
+                                                Jenis User
+                                            </label>
                                         </div>
                                         <select class="custom-select" name="level">
 
-                                             <option value="">Pilih Jenis User</option>
-                                             <option value="Guru">Guru</option>
-                                             <option value="Karyawan">Karyawan</option>
-                                             <option value="Siswa">Siswa</option>
+                                            <option value="">Pilih Jenis User</option>
+                                            <option value="Guru">Guru</option>
+                                            <option value="Karyawan">Karyawan</option>
+                                            <option value="Siswa">Siswa</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -82,8 +82,8 @@
                                         <label for=""><strong>Konfirmasi Password</strong></label>
                                         <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
                                     </div>
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-block">Register</button>
 
                             </form>
                             <div class="text-center">

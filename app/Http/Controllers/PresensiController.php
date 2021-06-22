@@ -63,6 +63,7 @@ class PresensiController extends Controller
 
     public function tampildatakeseluruhan($tglawal, $tglakhir)
     {
+        //orderBy untuk mengurutkan data
         $presensi = Presensi::with('user')->whereBetween('tgl', [$tglawal, $tglakhir])->orderBy('tgl', 'asc')->get();
         return view('presensi.rekap-guru', compact('presensi'));
     }

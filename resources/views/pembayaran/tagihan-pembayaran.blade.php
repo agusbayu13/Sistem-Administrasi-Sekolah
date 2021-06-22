@@ -72,21 +72,20 @@
                                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Hapus</a>
                                                 </div>
                                             </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        </td>
-                        </tr>
-                        @endforeach
-                        </tbody>
-                        </table>
                     </div>
                 </div>
+            </form>
+
+
         </div>
-        </form>
+        <!-- /.container-fluid -->
 
+        @include('sweetalert::alert')
 
-    </div>
-    <!-- /.container-fluid -->
-
-    @include('sweetalert::alert')
-
-    @endsection
+        @endsection

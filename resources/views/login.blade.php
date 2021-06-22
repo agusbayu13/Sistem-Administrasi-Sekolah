@@ -46,7 +46,7 @@
                                         <div class="card-body">
                                             @if(session('errors'))
                                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                Something it's wrong:
+                                                Maaf, Terjadi sebuah kesalahan:
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">×</span>
                                                 </button>

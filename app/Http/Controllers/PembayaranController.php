@@ -26,6 +26,16 @@ class PembayaranController extends Controller
         return view('pembayaran.tagihan-pembayaran', compact('dt_pembayaran'));
     }
 
+    public function indexsemua(Request $request)
+    {
+        //dd($request->all());
+
+        alert()->warning('Berhasil!', 'Menampilkan Semua Tagihan');
+        $dt_pembayaran = pembayaran::all();
+
+        return view('pembayaran.tagihan-pembayaran', compact('dt_pembayaran'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -34,6 +44,11 @@ class PembayaranController extends Controller
     public function create()
     {
         return view('pembayaran.input-pembayaran');
+    }
+
+    public function IndexTagihan()
+    {
+        return view('pembayaran.home-tagihan');
     }
 
     /**

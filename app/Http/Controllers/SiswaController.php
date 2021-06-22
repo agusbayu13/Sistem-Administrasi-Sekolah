@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Siswa;
+use App\Models\siswa;
 
 class SiswaController extends Controller
 {
@@ -145,9 +145,9 @@ class SiswaController extends Controller
     public function destroy($nis)
     {
         $sis = siswa::findorfail($nis);
-            $sis->delete();
-    
-            alert()->info('Data Berhasil Dihapus');
-            return back();
+        $sis->delete();
+
+        alert()->info('Data Berhasil Dihapus');
+        return back();
     }
 }

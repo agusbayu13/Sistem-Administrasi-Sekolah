@@ -20,33 +20,33 @@
       <div class="form-group">
         <label for="kelas" class="form-label"><strong>Kelas</strong></label>
         <select class="form-control" id="country" required>
-          
-                        <option>Pilih Kelas</option>
-                        <option>X MIPA 1</option>
-                        <option>X MIPA 2</option>
-                        <option>X MIPA 3</option>
-                        <option>X MIPA 4</option>
-                        <option>X MIPA 5</option>
-                        <option>XI MIPA 1</option>
-                        <option>XI MIPA 2</option>
-                        <option>XI MIPA 3</option>
-                        <option>XI MIPA 4</option>
-                        <option>XI MIPA 5</option>
-                        <option>XII MIPA 1</option>
-                        <option>XII MIPA 2</option>
-                        <option>XII MIPA 3</option>
-                        <option>XII MIPA 4</option>
-                        <option>XII MIPA 5</option>
-                        <option>X IPS 1</option>
-                        <option>X IPS 2</option>
-                        <option>X IPS 3</option>
-                        <option>XI IPS 1</option>
-                        <option>XI IPS 2</option>
-                        <option>XI IPS 3</option>
-                        <option>XII IPS 1</option>
-                        <option>XII IPS 2</option>
-                        <option>XII IPS 3</option>
-                        
+
+          <option>Pilih Kelas</option>
+          <option>X MIPA 1</option>
+          <option>X MIPA 2</option>
+          <option>X MIPA 3</option>
+          <option>X MIPA 4</option>
+          <option>X MIPA 5</option>
+          <option>XI MIPA 1</option>
+          <option>XI MIPA 2</option>
+          <option>XI MIPA 3</option>
+          <option>XI MIPA 4</option>
+          <option>XI MIPA 5</option>
+          <option>XII MIPA 1</option>
+          <option>XII MIPA 2</option>
+          <option>XII MIPA 3</option>
+          <option>XII MIPA 4</option>
+          <option>XII MIPA 5</option>
+          <option>X IPS 1</option>
+          <option>X IPS 2</option>
+          <option>X IPS 3</option>
+          <option>XI IPS 1</option>
+          <option>XI IPS 2</option>
+          <option>XI IPS 3</option>
+          <option>XII IPS 1</option>
+          <option>XII IPS 2</option>
+          <option>XII IPS 3</option>
+
         </select>
       </div>
       @csrf
@@ -63,6 +63,18 @@
           <div>
             <button type="submit" class="btn btn-success btn-block btn-rounded float-right">Cari Tagihan</button>
           </div>
+          <div class="my-5"></div>
+
+          <div>
+            <a href="{{route('semua-tagihan-pembayaran')}}" class="btn btn-success btn-block btn-rounded float-right">
+              <span class="text">Tampilkan Semua Tagihan</span>
+            </a>
+          </div>
+          <!-- /.
+          <div>
+            <button class="btn btn-success btn-block btn-rounded float-right" href="{{route('semua-tagihan-pembayaran')}}">Tampilkan Semua Tagihan</button>
+          </div>
+          -->
         </form>
       </div>
     </div>
