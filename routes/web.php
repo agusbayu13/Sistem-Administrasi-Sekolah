@@ -30,7 +30,7 @@ Route::post('register', [AuthController::class, 'register']);
 Route::group(['middleware' => ['auth', 'ceklevel:Admin,Guru,Karyawan,Siswa']], function () {
     Route::get('home', [HomeController::class, 'index'])->name('home');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/about', [AboutController::class, 'index'])->name('about');
+    Route::get('about', [AboutController::class, 'index'])->name('about');
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:Admin']], function () {

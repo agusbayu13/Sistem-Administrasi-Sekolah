@@ -146,7 +146,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
 
                         <a class="collapse-item" href="{{route('input-pembayaran')}}">Input Transaksi</a>
-                        <a class="collapse-item" href="tagihan">Tagihan</a>
+                        <a class="collapse-item" href="{{route('tagihan')}}">Tagihan</a>
 
                     </div>
                 </div>
@@ -165,7 +165,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/about">
+                <a class="nav-link" href="{{route('about')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>About</span></a>
             </li>
@@ -182,7 +182,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/about">
+                <a class="nav-link" href="{{route('about')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>About</span></a>
             </li>
@@ -199,7 +199,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/about">
+                <a class="nav-link" href="{{route('about')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>About</span></a>
             </li>
@@ -216,7 +216,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/about">
+                <a class="nav-link" href="{{route('about')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>About</span></a>
             </li>

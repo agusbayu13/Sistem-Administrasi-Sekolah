@@ -16,7 +16,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Data Transaksi Siswa</h6>
         </div>
         <div class="card-header">
-            <a href="/tagihan" class="btn btn-success btn-icon-split">
+            <a href="{{route('tagihan')}}" class="btn btn-success btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-check"></i>
                 </span>
