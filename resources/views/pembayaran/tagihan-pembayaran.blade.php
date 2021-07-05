@@ -36,7 +36,6 @@
                                         <th>Kelas</th>
                                         <th>NIS Siswa</th>
                                         <th>Jenis Pembayaran</th>
-                                        <th>Kode Pembayaran</th>
                                         <th>Tanggal Pembayaran</th>
                                         <th>Total Pembayaran</th>
                                         <th>Bukti Pembayaran</th>
@@ -51,7 +50,6 @@
                                         <td>{{$item->kelas}}</td>
                                         <td>{{$item->nis}}</td>
                                         <td>{{$item->jenis_pembayaran}}</td>
-                                        <td>{{$item->kode_pembayaran}}</td>
                                         <td>{{$item->tgl_pembayaran}}</td>
                                         <td>{{$item->total_pembayaran}}</td>
                                         <td>

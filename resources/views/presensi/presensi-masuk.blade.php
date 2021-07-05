@@ -43,6 +43,19 @@
             <div class="card card-info card-outline">
                 <div class="card-header">Selamat datang pada halaman presensi, silahkan klik <strong>HADIR</strong> untuk melakukan presensi masuk.</div>
                 <div class="card-body">
+                    @if(session('errors'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Oops! Ada Kesalahan:
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <form action="{{ route('simpan-masuk') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
@@ -56,6 +69,10 @@
                             </center>
                         </div>
                         <center>
+                            <div class="form-group">
+                                <label>Masukkan NIP Anda</label>
+                                <input type="text" name="nip" id="nip" class="form-control">
+                            </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">HADIR</button>
                             </div>

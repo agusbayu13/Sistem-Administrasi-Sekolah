@@ -41,7 +41,8 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <tr>
                                     <th>No</th>
-                                    <th> Pegawai </th>
+                                    <th> NIP </th>
+                                    <th> Nama Pegawai </th>
                                     <th> Tanggal </th>
                                     <th> Jam Masuk </th>
                                     <th> Jam Keluar </th>
@@ -50,7 +51,8 @@
                                 @foreach ($presensi as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->user->name }}</td>
+                                    <td>{{ $item->guru->nip }}</td>
+                                    <td>{{ $item->guru->nama }}</td>
                                     <td>{{ $item->tgl }}</td>
                                     <td>{{ $item->jammasuk }}</td>
                                     <td>{{ $item->jamkeluar }}</td>

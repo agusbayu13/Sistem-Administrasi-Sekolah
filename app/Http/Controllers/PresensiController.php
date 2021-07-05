@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Alert;
 use DateTime;
+use Validator;
 use DateTimeZone;
 use App\Models\Presensi;
 use Illuminate\Http\Request;
@@ -23,13 +24,26 @@ class PresensiController extends Controller
 
     public function store(Request $request)
     {
+        $rules = [
+            'nip'            => 'required|string',
+        ];
+
+        $messages = [
+            'nip.required'   => 'Harap masukkan NIP Anda terlebih dahulu',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+
+            return redirect()->back()->withErrors($validator)->withInput($request->all);
+        }
         $timezone = 'Asia/Jakarta';
         $date = new DateTime('now', new DateTimeZone($timezone));
         $tanggal = $date->format('Y-m-d');
         $localtime = $date->format('H:i:s');
 
         $presensi = Presensi::where([
-            ['user_id', '=', auth()->user()->id],
             ['tgl', '=', $tanggal],
         ])->first();
         if ($presensi) {
@@ -39,13 +53,11 @@ class PresensiController extends Controller
             return redirect('presensi-masuk');
         } else {
             Presensi::create([
-                'user_id' => auth()->user()->id,
                 'tgl' => $tanggal,
                 'jammasuk' => $localtime,
+                'nip' => $request->nip,
             ]);
         }
-
-
         return redirect('presensi-masuk')->with('success', 'Presensi Masuk Berhasil !!');
     }
 
@@ -70,13 +82,26 @@ class PresensiController extends Controller
 
     public function presensipulang()
     {
+        $rules = [
+            'nip'            => 'required|string',
+        ];
+
+        $messages = [
+            'nip.required'   => 'Harap masukkan NIP Anda terlebih dahulu',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+
+            return redirect()->back()->withErrors($validator)->withInput($request->all);
+        }
         $timezone = 'Asia/Jakarta';
         $date = new DateTime('now', new DateTimeZone($timezone));
         $tanggal = $date->format('Y-m-d');
         $localtime = $date->format('H:i:s');
 
         $presensi = Presensi::where([
-            ['user_id', '=', auth()->user()->id],
             ['tgl', '=', $tanggal],
         ])->first();
 

@@ -11,11 +11,16 @@ class Presensi extends Model
     protected $table = "presensi";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'user_id', 'tgl', 'jammasuk', 'jamkeluar', 'jamkerja'
+        'id', 'nip', 'tgl', 'jammasuk', 'jamkeluar', 'jamkerja'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function Guru()
+    {
+        return $this->belongsTo(Guru::class, 'nip');
     }
 }

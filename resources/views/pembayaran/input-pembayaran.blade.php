@@ -93,12 +93,6 @@
 
                   </select>
                </div>
-
-               <div class="form-group">
-                  <label>Kode Pembayaran</label>
-                  <input type="text" name="kode_pembayaran" id="kode_pembayaran" class="form-control">
-               </div>
-
                <div class="form-group">
                   <label>Tanggal Pembayaran</label>
                   <input type="date" name="tgl_pembayaran" id="tgl_pembayaran" class="form-control">

@@ -17,7 +17,6 @@ class PembayaranController extends Controller
     {
         //dd($request->all());
         if ($request) {
-            alert()->success('Berhasil!', 'Data Berhasil Ditemukan');
             $dt_pembayaran = pembayaran::with('siswa')->where('nis', 'LIKE', '%' . $request->cari . '%')->get();;
         } else {
             alert()->error('Gagal!', 'Data Tidak Ditemukan');
@@ -29,7 +28,6 @@ class PembayaranController extends Controller
     public function indexsemua(Request $request)
     {
         //dd($request->all());
-
         alert()->warning('Berhasil!', 'Menampilkan Semua Tagihan');
         $dt_pembayaran = pembayaran::all();
 
@@ -64,7 +62,6 @@ class PembayaranController extends Controller
             'kelas'                => 'required|string',
             'nis'                  => 'required|string',
             'jenis_pembayaran'     => 'required|string',
-            'kode_pembayaran'      => 'required|string',
             'tgl_pembayaran'       => 'required|date',
             'bukti'                => 'required',
             'total_pembayaran'     => 'required|string',
@@ -76,7 +73,6 @@ class PembayaranController extends Controller
             'kelas.required'                => 'Kelas tidak boleh kosong',
             'nis.required'                  => 'NIS tidak boleh kosong',
             'jenis_pembayaran.required'     => 'Jenis Pembayaran tidak boleh kosong',
-            'kode_pembayaran.required'      => 'Kode Pembayaran tidak boleh kosong',
             'tgl_pembayaran.required'       => 'Tanggal Pembayaran tidak boleh kosong',
             'bukti.required'                => 'Bukti Pembayaran tidak boleh kosong',
             'total_pembayaran.required'     => 'Total Pembayaran tidak boleh kosong',
@@ -95,7 +91,6 @@ class PembayaranController extends Controller
         $dt_upload->kelas = $request->kelas;
         $dt_upload->nis = $request->nis;
         $dt_upload->jenis_pembayaran = $request->jenis_pembayaran;
-        $dt_upload->kode_pembayaran = $request->kode_pembayaran;
         $dt_upload->tgl_pembayaran = $request->tgl_pembayaran;
         //$dt_upload->tgl_pembayaran = \Carbon\Carbon::now();
         $dt_upload->bukti_pembayaran = $namafile;
@@ -143,9 +138,8 @@ class PembayaranController extends Controller
             'kelas'                => 'required|string',
             'nis'                  => 'required|string',
             'jenis_pembayaran'     => 'required|string',
-            'kode_pembayaran'      => 'required|string',
             'tgl_pembayaran'       => 'required|date',
-            'bukti_pembayaran'                => 'required',
+            'bukti_pembayaran'     => 'required',
             'total_pembayaran'     => 'required|string',
 
         ];
@@ -155,9 +149,8 @@ class PembayaranController extends Controller
             'kelas.required'                => 'Kelas tidak boleh kosong',
             'nis.required'                  => 'NIS tidak boleh kosong',
             'jenis_pembayaran.required'     => 'Jenis Pembayaran tidak boleh kosong',
-            'kode_pembayaran.required'      => 'Kode Pembayaran tidak boleh kosong',
             'tgl_pembayaran.required'       => 'Tanggal Pembayaran tidak boleh kosong',
-            'bukti_pembayaran.required'                => 'Harap masukkan ulang bukti pembayaran | Bukti Pembayaran tidak boleh kosong',
+            'bukti_pembayaran.required'     => 'Harap masukkan ulang bukti pembayaran | Bukti Pembayaran tidak boleh kosong',
             'total_pembayaran.required'     => 'Total Pembayaran tidak boleh kosong',
         ];
 
