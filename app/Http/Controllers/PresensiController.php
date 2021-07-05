@@ -44,6 +44,7 @@ class PresensiController extends Controller
         $localtime = $date->format('H:i:s');
 
         $presensi = Presensi::where([
+            ['user_id','=',auth()->user()->id],
             ['tgl', '=', $tanggal],
         ])->first();
         if ($presensi) {
@@ -53,6 +54,7 @@ class PresensiController extends Controller
             return redirect('presensi-masuk');
         } else {
             Presensi::create([
+                'user_id'=> auth()->user()->id,
                 'tgl' => $tanggal,
                 'jammasuk' => $localtime,
                 'nip' => $request->nip,
@@ -89,6 +91,7 @@ class PresensiController extends Controller
         $localtime = $date->format('H:i:s');
 
         $presensi = Presensi::where([
+            ['user_id','=',auth()->user()->id],
             ['tgl', '=', $tanggal],
         ])->first();
 
