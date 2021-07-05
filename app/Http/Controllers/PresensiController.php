@@ -82,20 +82,7 @@ class PresensiController extends Controller
 
     public function presensipulang()
     {
-        $rules = [
-            'nip'            => 'required|string',
-        ];
-
-        $messages = [
-            'nip.required'   => 'Harap masukkan NIP Anda terlebih dahulu',
-        ];
-
-        $validator = Validator::make($request->all(), $rules, $messages);
-
-        if ($validator->fails()) {
-
-            return redirect()->back()->withErrors($validator)->withInput($request->all);
-        }
+       
         $timezone = 'Asia/Jakarta';
         $date = new DateTime('now', new DateTimeZone($timezone));
         $tanggal = $date->format('Y-m-d');
