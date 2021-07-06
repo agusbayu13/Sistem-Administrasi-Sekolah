@@ -56,6 +56,10 @@
                                         <label for=""><strong>Nama Lengkap</strong></label>
                                         <input type="text" name="name" class="form-control" placeholder="Nama Lengkap">
                                     </div>
+                                    <div class="form-group">
+                                        <label for=""><strong>NIP</strong></label>
+                                        <input type="text" name="nip" class="form-control" placeholder="NIP">
+                                    </div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <label class="input-group-text">
