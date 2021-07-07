@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\GuruController;
@@ -24,8 +25,10 @@ use App\Http\Controllers\AboutController;
 Route::get('/', [AuthController::class, 'showFormLogin'])->name('login');
 Route::get('login', [AuthController::class, 'showFormLogin'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
-Route::get('register', [AuthController::class, 'showFormRegister'])->name('register');
-Route::post('register', [AuthController::class, 'register']);
+Route::get('register', [RegisterController::class, 'showFormRegister'])->name('register');
+Route::post('register', [RegisterController::class, 'register']);
+Route::get('adminregister', [AuthController::class, 'showFormRegister'])->name('adminregister');
+Route::post('adminregister', [AuthController::class, 'register']);
 
 Route::group(['middleware' => ['auth', 'ceklevel:Admin,Guru,Karyawan,Siswa']], function () {
     Route::get('home', [HomeController::class, 'index'])->name('home');
@@ -34,6 +37,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:Admin,Guru,Karyawan,Siswa']], f
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:Admin']], function () {
+    Route::get('register-approval', [RegisterController::class, 'index'])->name('register-approval');
     Route::get('/data-guru', 'App\Http\Controllers\GuruController@index')->name('data-guru');
     Route::get('/input-guru', 'App\Http\Controllers\GuruController@create')->name('input-guru');
     Route::post('/simpan-guru', 'App\Http\Controllers\GuruController@store')->name('simpan-guru');

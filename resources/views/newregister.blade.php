@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Register Khusus Admin | Sistem Administrasi Sekolah</title>
+    <title>Register | Sistem Administrasi Sekolah</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('frontend') }}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -34,15 +34,7 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">
-                                    <strong>
-                                        KHUSUS ADMIN
-                                        </br>
-                                        BUAT AKUN BARU DI ACHYS
-                                        </br>
-                                        NEW HIGH SCHOOL
-                                    </strong>
-                                </h1>
+                                <h1 class="h4 text-gray-900 mb-4"><strong>BUAT AKUN BARU DI ACHYS</br>NEW HIGH SCHOOL</strong></h1>
                             </div>
                             <form action="{{ route('register') }}" method="post">
                                 @csrf
@@ -65,8 +57,8 @@
                                         <input type="text" name="name" class="form-control" placeholder="Nama Lengkap">
                                     </div>
                                     <div class="form-group">
-                                        <label for=""><strong>NIP</strong></label>
-                                        <input type="text" name="nip" class="form-control" placeholder="NIP">
+                                        <label for=""><strong>NIP/NIS</strong></label>
+                                        <input type="text" name="nip" class="form-control" placeholder="NIP/NIS">
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">

@@ -56,6 +56,14 @@
             <!-- Nav Item - Pages Collapse Menu -->
             @if(auth()->user()->level=="Admin")
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('register-approval')}}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Permintaan User Baru</span></a>
+            </li>
+            @endif
+
+            @if(auth()->user()->level=="Admin")
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Presensi</span>
@@ -398,11 +406,13 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                @if(auth()->user()->level=="Admin")
+                                <a class="dropdown-item" href="{{ route('adminregister') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                                    Register New Account
                                 </a>
                                 <div class="dropdown-divider"></div>
+                                @endif
                                 <a class="dropdown-item" href="{{ route('logout') }}">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout

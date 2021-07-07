@@ -73,7 +73,8 @@ class AuthController extends Controller
         $rules = [
             'name'                  => 'required|min:3|max:35',
             'email'                 => 'required|email|unique:users,email',
-            'password'              => 'required|confirmed'
+            'password'              => 'required|confirmed',
+            'nip'                   => 'required'
 
         ];
 
@@ -81,6 +82,7 @@ class AuthController extends Controller
             'name.required'         => 'Nama Lengkap wajib diisi',
             'name.min'              => 'Nama lengkap minimal 3 karakter',
             'name.max'              => 'Nama lengkap maksimal 35 karakter',
+            'nip.required'          => 'NIP/NIS wajib diisi',
             'email.required'        => 'Email wajib diisi',
             'email.email'           => 'Email tidak valid',
             'email.unique'          => 'Email sudah terdaftar',

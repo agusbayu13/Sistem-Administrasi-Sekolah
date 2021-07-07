@@ -51,8 +51,8 @@
                                 @foreach ($presensi as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->guru->nip }}</td>
-                                    <td>{{ $item->guru->nama }}</td>
+                                    <td>{{ $item->user->nip }}</td>
+                                    <td>{{ $item->user->name }}</td>
                                     <td>{{ $item->tgl }}</td>
                                     <td>{{ $item->jammasuk }}</td>
                                     <td>{{ $item->jamkeluar }}</td>
