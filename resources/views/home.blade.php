@@ -23,6 +23,8 @@
                                 {{ Auth::user()->level }}
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ Auth::user()->name }}</div>
+                            <div class="my-1"></div>
+                            NIP/NIS : {{ Auth::user()->nip }}
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
